@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuenMind | Mental Wellness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .wellness-gradient { background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%); }
+    </style>
+</head>
+<body class="wellness-gradient min-h-screen text-slate-800" x-data="{ lang: 'en' }">
+
+    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto">
+        <div class="text-2xl font-semibold text-emerald-700 tracking-tight">BuenMind</div>
+        <button @click="lang = lang === 'en' ? 'es' : 'en'" 
+                class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-emerald-100 shadow-sm hover:shadow-md transition-all text-sm font-medium">
+            <span x-show="lang === 'en'">Español 🇪🇸</span>
+            <span x-show="lang === 'es'">English 🇺🇸</span>
+        </button>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-20 text-center">
+        <div x-show="lang === 'en'" x-transition>
+            <h1 class="text-5xl md:text-6xl font-bold text-slate-900 mb-6">Mental Wellness for Everyone</h1>
+            <p class="text-xl text-slate-600 mb-10 leading-relaxed">Providing tools and emotional awareness to navigate life's challenges with clarity and peace.</p>
+        </div>
+        
+        <div x-show="lang === 'es'" x-transition>
+            <h1 class="text-5xl md:text-6xl font-bold text-slate-900 mb-6">Bienestar Mental para Todos</h1>
+            <p class="text-xl text-slate-600 mb-10 leading-relaxed">Brindando herramientas y conciencia emocional para navegar los desafíos de la vida con claridad y paz.</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <a href="#" class="bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-emerald-700 transition-colors shadow-lg">
+                <span x-show="lang === 'en'">Explore Tools</span>
+                <span x-show="lang === 'es'">Explorar Herramientas</span>
+            </a>
+            <a href="#" class="bg-white text-emerald-700 border border-emerald-100 px-8 py-4 rounded-xl font-semibold hover:bg-emerald-50 transition-colors shadow-sm">
+                <span x-show="lang === 'en'">About Us</span>
+                <span x-show="lang === 'es'">Sobre Nosotros</span>
+            </a>
+        </div>
+    </main>
+
+    <footer class="absolute bottom-10 w-full text-center text-slate-400 text-sm">
+        &copy; 2026 BuenMind. All rights reserved.
+    </footer>
+
+</body>
+</html>
