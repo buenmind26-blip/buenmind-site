@@ -3,52 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuenMind | Mental Wellness</title>
+    <link rel="icon" type="image/png" href="WebsiteFaveicon.png">
+    
+    <title>BuenMind – Modern Mental Wellness</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-        .wellness-gradient { background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%); }
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfdfd; }
+        .logo-shadow { filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05)); }
     </style>
 </head>
-<body class="wellness-gradient min-h-screen text-slate-800" x-data="{ lang: 'en' }">
+<body x-data="{ lang: 'en' }">
 
-    <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto">
-        <div class="text-2xl font-semibold text-emerald-700 tracking-tight">BuenMind</div>
+    <nav class="max-w-6xl mx-auto p-6 flex justify-between items-center">
+        <a href="/">
+            <img src="BM_MainHeaderLogo.png" alt="BuenMind Logo" class="h-12 w-auto logo-shadow">
+        </a>
+        
         <button @click="lang = lang === 'en' ? 'es' : 'en'" 
-                class="bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-emerald-100 shadow-sm hover:shadow-md transition-all text-sm font-medium">
-            <span x-show="lang === 'en'">Español 🇪🇸</span>
-            <span x-show="lang === 'es'">English 🇺🇸</span>
+                class="text-sm font-bold text-emerald-700 bg-white px-5 py-2 rounded-full border border-emerald-100 hover:shadow-sm transition-all">
+            <span x-show="lang === 'en'">Español</span>
+            <span x-show="lang === 'es'">English</span>
         </button>
     </nav>
 
     <main class="max-w-4xl mx-auto px-6 py-20 text-center">
-        <div x-show="lang === 'en'" x-transition>
-            <h1 class="text-5xl md:text-6xl font-bold text-slate-900 mb-6">Mental Wellness for Everyone</h1>
-            <p class="text-xl text-slate-600 mb-10 leading-relaxed">Providing tools and emotional awareness to navigate life's challenges with clarity and peace.</p>
-        </div>
-        
-        <div x-show="lang === 'es'" x-transition>
-            <h1 class="text-5xl md:text-6xl font-bold text-slate-900 mb-6">Bienestar Mental para Todos</h1>
-            <p class="text-xl text-slate-600 mb-10 leading-relaxed">Brindando herramientas y conciencia emocional para navegar los desafíos de la vida con claridad y paz.</p>
+        <div x-show="lang === 'en'">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Modern Mental Wellness</h1>
+            <p class="text-xl text-emerald-600 font-medium mb-8 italic">"Clarity, calm, and growth for your everyday life."</p>
+            <p class="text-lg leading-relaxed text-slate-700 max-w-2xl mx-auto mb-10">
+                BuenMind is a modern mental wellness space offering practical tools, reflections, and resources to help you cultivate a calmer, healthier mind in everyday life.
+            </p>
         </div>
 
-        <div class="flex flex-col md:flex-row gap-4 justify-center">
-            <a href="#" class="bg-emerald-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-emerald-700 transition-colors shadow-lg">
-                <span x-show="lang === 'en'">Explore Tools</span>
-                <span x-show="lang === 'es'">Explorar Herramientas</span>
-            </a>
-            <a href="#" class="bg-white text-emerald-700 border border-emerald-100 px-8 py-4 rounded-xl font-semibold hover:bg-emerald-50 transition-colors shadow-sm">
-                <span x-show="lang === 'en'">About Us</span>
-                <span x-show="lang === 'es'">Sobre Nosotros</span>
-            </a>
+        <div x-show="lang === 'es'">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Bienestar Mental Moderno</h1>
+            <p class="text-xl text-emerald-600 font-medium mb-8 italic">"Claridad, calma y crecimiento para tu vida diaria."</p>
+            <p class="text-lg leading-relaxed text-slate-700 max-w-2xl mx-auto mb-10">
+                BuenMind es un espacio moderno de bienestar mental que ofrece herramientas prácticas, reflexiones y recursos para ayudarte a cultivar una mente más tranquila y saludable en tu día a día.
+            </p>
         </div>
+
+        <button class="bg-emerald-600 text-white px-10 py-4 rounded-xl font-bold hover:bg-emerald-700 shadow-lg transition-transform hover:scale-105">
+            <span x-show="lang === 'en'">Explore Our Tools</span>
+            <span x-show="lang === 'es'">Explorar Herramientas</span>
+        </button>
     </main>
-
-    <footer class="absolute bottom-10 w-full text-center text-slate-400 text-sm">
-        &copy; 2026 BuenMind. All rights reserved.
-    </footer>
 
 </body>
 </html>
