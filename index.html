@@ -10,9 +10,11 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfdfd; }
+        .fade-in { animation: fadeIn 1.2s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
-<body x-data="{ lang: 'en' }">
+<body x-data="{ lang: 'en' }" class="fade-in">
 
     <nav class="max-w-6xl mx-auto p-6 flex justify-between items-center">
         <img src="BM_MainHeaderLogo.png" alt="BuenMind Logo" class="h-16 md:h-20 w-auto">
@@ -24,44 +26,42 @@
         </button>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-6 py-12">
-        <div class="text-center mb-16">
-            <div x-show="lang === 'en'">
-                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Modern Mental Wellness</h1>
-                <p class="text-2xl text-emerald-600 font-medium italic mb-8">"Clarity, calm, and growth for your everyday life."</p>
-                <p class="text-lg leading-relaxed text-slate-700 max-w-2xl mx-auto">
-                    BuenMind is a modern mental wellness space offering practical tools, reflections, and resources to help you cultivate a calmer, healthier mind in everyday life.
-                </p>
-            </div>
-
-            <div x-show="lang === 'es'">
-                <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Bienestar Mental Moderno</h1>
-                <p class="text-2xl text-emerald-600 font-medium italic mb-8">"Claridad, calma y crecimiento para tu vida diaria."</p>
-                <p class="text-lg leading-relaxed text-slate-700 max-w-2xl mx-auto">
-                    BuenMind es un espacio moderno de bienestar mental que ofrece herramientas prácticas, reflexiones y recursos para ayudarte a cultivar una mente más tranquila y saludable en tu día a día.
-                </p>
-            </div>
+    <main class="max-w-4xl mx-auto px-6 py-12 text-center">
+        <div x-show="lang === 'en'">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Coming Soon</h1>
+            <p class="text-2xl text-emerald-600 font-medium italic mb-8">"Clarity, calm, and growth for your everyday life."</p>
+            <p class="text-lg leading-relaxed text-slate-700 max-w-2xl mx-auto mb-10">
+                We are building a modern space for your mental well-being. Soon you will have access to practical tools and resources designed to help you find inner balance.
+            </p>
         </div>
 
-        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-slate-100">
-            <div x-show="lang === 'en'">
-                <p class="text-slate-600 leading-relaxed mb-6">
-                    We blend emotional awareness, mindset strategies, and self-care practices so you can move from overwhelm to clarity, from stress to inner balance. 
-                </p>
-                <p class="text-slate-600 leading-relaxed">
-                    Whether you are just starting your mental wellness journey or deepening it, BuenMind guides you with approachable, stigma-free support.
-                </p>
-            </div>
-            <div x-show="lang === 'es'">
-                <p class="text-slate-600 leading-relaxed mb-6">
-                    Combinamos conciencia emocional, estrategias de mentalidad y autocuidado para que puedas pasar del agobio a la claridad, del estrés al equilibrio interior.
-                </p>
-                <p class="text-slate-600 leading-relaxed">
-                    Ya sea que estés iniciando o profundizando tu camino de bienestar mental, BuenMind te acompaña con apoyo cercano y sin estigmas.
-                </p>
+        <div x-show="lang === 'es'">
+            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Próximamente</h1>
+            <p class="text-2xl text-emerald-600 font-medium italic mb-8">"Claridad, calma y crecimiento para tu vida diaria."</p>
+            <p class="text-lg leading-relaxed text-slate-700 max-w-2xl mx-auto mb-10">
+                Estamos construyendo un espacio moderno para tu bienestar mental. Pronto tendrás acceso a herramientas y recursos diseñados para ayudarte a encontrar el equilibrio interior.
+            </p>
+        </div>
+
+        <div class="flex flex-col items-center gap-6 pt-8 border-t border-slate-100">
+            <a href="mailto:info@buenmind.com" class="text-slate-600 hover:text-emerald-600 font-medium transition-colors">
+                info@buenmind.com
+            </a>
+            
+            <div class="flex gap-8 items-center">
+                <a href="https://instagram.com/BuenMind" target="_blank" class="flex items-center gap-2 text-slate-500 hover:text-pink-600 transition-colors">
+                    <span class="font-semibold">Instagram</span>
+                </a>
+                <a href="https://tiktok.com/@BuenMind" target="_blank" class="flex items-center gap-2 text-slate-500 hover:text-black transition-colors">
+                    <span class="font-semibold">TikTok</span>
+                </a>
             </div>
         </div>
     </main>
+
+    <footer class="mt-20 py-10 text-center text-slate-400 text-xs">
+        &copy; 2026 BuenMind. All rights reserved.
+    </footer>
 
 </body>
 </html>
