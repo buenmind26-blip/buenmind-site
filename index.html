@@ -8,60 +8,67 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfdfd; }
-        .fade-in { animation: fadeIn 1.2s ease-in; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .section-fade { animation: fadeIn 1.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
-<body x-data="{ lang: 'en' }" class="fade-in">
+<body x-data="{ lang: 'en' }" class="text-slate-800">
 
     <nav class="max-w-6xl mx-auto p-6 flex justify-between items-center">
         <img src="BM_MainHeaderLogo.png" alt="BuenMind Logo" class="h-16 md:h-20 w-auto">
-        
-        <button @click="lang = lang === 'en' ? 'es' : 'en'" 
-                class="text-sm font-bold text-emerald-700 bg-white px-5 py-2 rounded-full border border-emerald-100 hover:shadow-md transition-all">
+        <button @click="lang = lang === 'en' ? 'es' : 'en'" class="text-sm font-bold text-emerald-700 bg-white px-5 py-2 rounded-full border border-emerald-100 hover:shadow-md transition-all">
             <span x-show="lang === 'en'">Leer en Español</span>
             <span x-show="lang === 'es'">Read in English</span>
         </button>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-6 py-12 text-center">
-        <div x-show="lang === 'en'">
-            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Coming Soon</h1>
-            <p class="text-2xl text-emerald-600 font-medium italic mb-8">"Clarity, calm, and growth for your everyday life."</p>
-            <p class="text-lg leading-relaxed text-slate-700 max-w-2xl mx-auto mb-10">
-                We are building a modern space for your mental well-being. Soon you will have access to practical tools and resources designed to help you find inner balance.
-            </p>
-        </div>
+    <header class="max-w-4xl mx-auto px-6 py-12 text-center section-fade">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4" x-text="lang === 'en' ? 'Modern Mental Wellness' : 'Bienestar Mental Moderno'"></h1>
+        <p class="text-xl text-emerald-600 italic mb-8" x-text="lang === 'en' ? '“Clarity, calm, and growth for your everyday life.”' : '“Claridad, calma y crecimiento para tu vida diaria.”'"></p>
+    </header>
 
-        <div x-show="lang === 'es'">
-            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Próximamente</h1>
-            <p class="text-2xl text-emerald-600 font-medium italic mb-8">"Claridad, calma y crecimiento para tu vida diaria."</p>
-            <p class="text-lg leading-relaxed text-slate-700 max-w-2xl mx-auto mb-10">
-                Estamos construyendo un espacio moderno para tu bienestar mental. Pronto tendrás acceso a herramientas y recursos diseñados para ayudarte a encontrar el equilibrio interior.
-            </p>
-        </div>
-
-        <div class="flex flex-col items-center gap-6 pt-8 border-t border-slate-100">
-            <a href="mailto:info@buenmind.com" class="text-slate-600 hover:text-emerald-600 font-medium transition-colors">
-                info@buenmind.com
-            </a>
-            
-            <div class="flex gap-8 items-center">
-                <a href="https://instagram.com/BuenMind" target="_blank" class="flex items-center gap-2 text-slate-500 hover:text-pink-600 transition-colors">
-                    <span class="font-semibold">Instagram</span>
-                </a>
-                <a href="https://tiktok.com/@BuenMind" target="_blank" class="flex items-center gap-2 text-slate-500 hover:text-black transition-colors">
-                    <span class="font-semibold">TikTok</span>
-                </a>
+    <main class="max-w-4xl mx-auto px-6 space-y-20 pb-20">
+        
+        <section class="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h2 class="text-2xl font-semibold text-slate-900 mb-4" x-text="lang === 'en' ? 'Why BuenMind Exists' : 'Por Qué Existe BuenMind'"></h2>
+                <p class="leading-relaxed text-slate-600" x-show="lang === 'en'">BuenMind was created to offer a gentle, stigma-free space for people who want to feel more grounded, confident, and connected to themselves. Emotional wellness should feel welcoming—not clinical or out of reach.</p>
+                <p class="leading-relaxed text-slate-600" x-show="lang === 'es'">BuenMind nació para ofrecer un espacio amable y libre de estigma para quienes desean sentirse más centrados, seguros y conectados consigo mismos. El bienestar emocional debe sentirse accesible y cálido.</p>
             </div>
-        </div>
-    </main>
+            <div class="bg-emerald-50 rounded-3xl p-8 text-center border border-emerald-100">
+                <span class="text-4xl">🌱</span>
+                <p class="mt-4 font-medium text-emerald-800" x-text="lang === 'en' ? 'A personal commitment to clarity and growth.' : 'Un compromiso personal con la claridad y el crecimiento.'"></p>
+            </div>
+        </section>
 
-    <footer class="mt-20 py-10 text-center text-slate-400 text-xs">
-        &copy; 2026 BuenMind. All rights reserved.
-    </footer>
+        <section class="bg-white rounded-[2rem] p-8 md:p-12 shadow-sm border border-slate-100">
+            <h2 class="text-2xl font-semibold mb-6 text-center" x-text="lang === 'en' ? 'A Bilingual Space for Everyone' : 'Un Espacio Bilingüe para Todos'"></h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="text-slate-600">
+                    <p x-show="lang === 'en'">We honor the reality of moving between languages and cultures by offering tools in both English and Spanish, ensuring that anyone—no matter their background—can feel seen and supported.</p>
+                    <p x-show="lang === 'es'">Honramos la realidad de moverse entre idiomas y culturas ofreciendo herramientas en inglés y español, asegurando que cualquiera pueda sentirse visto, apoyado e incluido.</p>
+                </div>
+                <div class="text-slate-600">
+                    <p x-show="lang === 'en'">Whether you’re beginning your journey or deepening it, you’re welcome here. This is a community rooted in compassion and steady personal growth.</p>
+                    <p x-show="lang === 'es'">Ya sea que estés comenzando tu camino o profundizando en él, aquí eres bienvenido. Esta es una comunidad basada en la compasión y el crecimiento personal constante.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center pt-10">
+            <h3 class="text-xl font-medium mb-6" x-text="lang === 'en' ? 'Coming Soon' : 'Próximamente'"></h3>
+            <div class="flex flex-col items-center gap-4">
+                <a href="mailto:info@buenmind.com" class="text-emerald-600 font-semibold text-lg hover:underline">info@buenmind.com</a>
+                <div class="flex gap-6 text-slate-400 font-bold tracking-tight">
+                    <a href="https://instagram.com/BuenMind" class="hover:text-pink-500 transition-colors">INSTAGRAM</a>
+                    <a href="https://tiktok.com/@BuenMind" class="hover:text-black transition-colors">TIKTOK</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
 </body>
 </html>
