@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ lang: 'en' }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – BuenMind</title>
+    <link rel="icon" type="image/png" href="/WebsiteFaveicon.png">
+
+    <!-- SEO -->
+    <meta name="description" content="Contact BuenMind — a bilingual wellness space for Gen X. Reach out for support, questions, or collaborations.">
+    <meta name="keywords" content="contact BuenMind, wellness support, bilingual wellness, Gen X calm">
+    <meta name="author" content="BuenMind">
+
+    <!-- Tailwind + Alpine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfdfd; }
+        .fade { animation: fadeIn 1.2s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+
+<body class="text-slate-800 antialiased">
+
+    <!-- NAV -->
+    <nav class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+            <img src="/BM_MainHeaderLogo.png" alt="BuenMind Logo" class="h-12 md:h-16 w-auto">
+        </a>
+
+        <div class="flex items-center gap-4">
+            <a href="/" class="text-xs font-semibold text-slate-500 hover:text-emerald-700 transition-colors"
+               x-text="lang === 'en' ? 'Home' : 'Inicio'"></a>
+
+            <button
+                @click="lang = lang === 'en' ? 'es' : 'en'"
+                class="text-xs md:text-sm font-bold text-emerald-700 bg-white px-4 py-2 rounded-full border border-emerald-100 hover:shadow-md transition-all"
+            >
+                <span x-show="lang === 'en'">Leer en Español</span>
+                <span x-show="lang === 'es'">Read in English</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="max-w-4xl mx-auto px-6 pt-10 pb-16 text-center fade">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            <span x-show="lang === 'en'">Contact BuenMind</span>
+            <span x-show="lang === 'es'">Contacta a BuenMind</span>
+        </h1>
+
+        <p class="text-lg text-emerald-700 italic max-w-2xl mx-auto">
+            <span x-show="lang === 'en'">We’re here to support your calm, clarity, and emotional growth.</span>
+            <span x-show="lang === 'es'">Estamos aquí para apoyar tu calma, claridad y crecimiento emocional.</span>
+        </p>
+
+        <p class="text-sm text-slate-500 max-w-xl mx-auto mt-3">
+            <span x-show="lang === 'en'">Reach out with questions, collaborations, or product inquiries.</span>
+            <span x-show="lang === 'es'">Escríbenos con preguntas, colaboraciones o consultas sobre productos.</span>
+        </p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 pb-24 space-y-20">
+
+        <!-- CONTACT FORM -->
+        <section class="fade">
+            <div class="bg-white rounded-[2rem] p-8 md:p-12 border border-slate-100 shadow-sm max-w-3xl mx-auto">
+                <h2 class="text-2xl font-semibold mb-6 text-center">
+                    <span x-show="lang === 'en'">Send a Message</span>
+                    <span x-show="lang === 'es'">Enviar un Mensaje</span>
+                </h2>
+
+                <!-- Replace with your form backend (Formspree, Netlify Forms, etc.) -->
+                <form class="space-y-6">
+
+                    <!-- Name -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">
+                            <span x-show="lang === 'en'">Your Name</span>
+                            <span x-show="lang === 'es'">Tu Nombre</span>
+                        </label>
+                        <input type="text" required
+                               class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                               placeholder="John Doe">
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">
+                            <span x-show="lang === 'en'">Email Address</span>
+                            <span x-show="lang === 'es'">Correo Electrónico</span>
+                        </label>
+                        <input type="email" required
+                               class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                               placeholder="you@example.com">
+                    </div>
+
+                    <!-- Message -->
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">
+                            <span x-show="lang === 'en'">Message</span>
+                            <span x-show="lang === 'es'">Mensaje</span>
+                        </label>
+                        <textarea rows="5" required
+                                  class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                                  placeholder="Write your message here..."></textarea>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit"
+                            class="w-full py-3 rounded-full bg-emerald-700 text-white text-sm font-semibold hover:bg-emerald-800 transition-colors">
+                        <span x-show="lang === 'en'">Send Message</span>
+                        <span x-show="lang === 'es'">Enviar Mensaje</span>
+                    </button>
+
+                </form>
+            </div>
+        </section>
+
+        <!-- DIRECT CONTACT -->
+        <section class="text-center fade">
+            <h2 class="text-xl font-semibold mb-3">
+                <span x-show="lang === 'en'">Prefer Email?</span>
+                <span x-show="lang === 'es'">¿Prefieres Correo?</span>
+            </h2>
+
+            <a href="mailto:info@buenmind.com" class="text-emerald-700 font-semibold hover:underline text-lg">
+                info@buenmind.com
+            </a>
+        </section>
+
+        <!-- SOCIAL LINKS -->
+        <section class="text-center fade">
+            <h2 class="text-xl font-semibold mb-3">
+                <span x-show="lang === 'en'">Connect on Social</span>
+                <span x-show="lang === 'es'">Conecta en Redes</span>
+            </h2>
+
+            <p class="text-sm text-slate-600 mb-5" x-show="lang === 'en'">
+                Follow BuenMind for daily calm check‑ins, affirmations, and gentle reminders.
+            </p>
+            <p class="text-sm text-slate-600 mb-5" x-show="lang === 'es'">
+                Sigue a BuenMind para chequeos diarios de calma, afirmaciones y recordatorios suaves.
+            </p>
+
+            <div class="flex justify-center gap-6 text-xs md:text-sm font-bold tracking-tight text-slate-400">
+                <a href="https://instagram.com/BuenMind" class="hover:text-pink-500 transition-colors">INSTAGRAM</a>
+                <a href="https://tiktok.com/@BuenMind" class="hover:text-black transition-colors">TIKTOK</a>
+                <a href="https://youtube.com" class="hover:text-red-500 transition-colors">YOUTUBE</a>
+                <a href="https://facebook.com" class="hover:text-blue-600 transition-colors">FACEBOOK</a>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION (Optional but great for SEO) -->
+        <section class="fade max-w-3xl mx-auto">
+            <h2 class="text-2xl font-semibold mb-6 text-center">
+                <span x-show="lang === 'en'">Frequently Asked Questions</span>
+                <span x-show="lang === 'es'">Preguntas Frecuentes</span>
+            </h2>
+
+            <div class="space-y-6">
+
+                <!-- FAQ 1 -->
+                <div>
+                    <h3 class="text-sm font-semibold text-slate-900 mb-1" x-show="lang === 'en'">Do you offer bilingual products?</h3>
+                    <h3 class="text-sm font-semibold text-slate-900 mb-1" x-show="lang === 'es'">¿Ofrecen productos bilingües?</h3>
+
+                    <p class="text-sm text-slate-600" x-show="lang === 'en'">
+                        Yes — every BuenMind product is created in English + Español.
+                    </p>
+                    <p class="text-sm text-slate-600" x-show="lang === 'es'">
+                        Sí — cada producto de BuenMind se crea en inglés + español.
+                    </p>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div>
+                    <h3 class="text-sm font-semibold text-slate-900 mb-1" x-show="lang === 'en'">Where will products be available?</h3>
+                    <h3 class="text-sm font-semibold text-slate-900 mb-1" x-show="lang === 'es'">¿Dónde estarán disponibles los productos?</h3>
+
+                    <p class="text-sm text-slate-600" x-show="lang === 'en'">
+                        BuenMind products will be available on our website, Amazon, Walmart Marketplace, and TikTok Shop.
+                    </p>
+                    <p class="text-sm text-slate-600" x-show="lang === 'es'">
+                        Los productos de BuenMind estarán disponibles en nuestro sitio web, Amazon, Walmart Marketplace y TikTok Shop.
+                    </p>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div>
+                    <h3 class="text-sm font-semibold text-slate-900 mb-1" x-show="lang === 'en'">How soon will new tools launch?</h3>
+                    <h3 class="text-sm font-semibold text-slate-900 mb-1" x-show="lang === 'es'">¿Cuándo lanzarán nuevas herramientas?</h3>
+
+                    <p class="text-sm text-slate-600" x-show="lang === 'en'">
+                        New digital and physical tools are launching throughout 2026.
+                    </p>
+                    <p class="text-sm text-slate-600" x-show="lang === 'es'">
+                        Nuevas herramientas digitales y físicas se lanzarán durante el 2026.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-100 py-6 mt-4">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
+            <p>© <span id="year"></span> BuenMind. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="/privacy" class="hover:text-emerald-700">Privacy</a>
+                <a href="/terms" class="hover:text-emerald-700">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
