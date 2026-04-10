@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ lang: 'en' }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service – BuenMind</title>
+    <link rel="icon" type="image/png" href="/WebsiteFaveicon.png">
+
+    <!-- SEO -->
+    <meta name="description" content="BuenMind Terms of Service – guidelines for using our website, products, and services. Bilingual English + Español.">
+    <meta name="keywords" content="BuenMind terms, terms of service, bilingual terms, wellness terms">
+    <meta name="author" content="BuenMind">
+
+    <!-- Tailwind + Alpine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfdfd; }
+        .fade { animation: fadeIn 1.2s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        h2 { margin-top: 2rem; margin-bottom: 1rem; }
+        p, li { margin-bottom: 1rem; }
+    </style>
+</head>
+
+<body class="text-slate-800 antialiased">
+
+    <!-- NAV -->
+    <nav class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+            <img src="/BM_MainHeaderLogo.png" alt="BuenMind Logo" class="h-12 md:h-16 w-auto">
+        </a>
+
+        <div class="flex items-center gap-4">
+            <a href="/" class="text-xs font-semibold text-slate-500 hover:text-emerald-700 transition-colors"
+               x-text="lang === 'en' ? 'Home' : 'Inicio'"></a>
+
+            <button
+                @click="lang = lang === 'en' ? 'es' : 'en'"
+                class="text-xs md:text-sm font-bold text-emerald-700 bg-white px-4 py-2 rounded-full border border-emerald-100 hover:shadow-md transition-all"
+            >
+                <span x-show="lang === 'en'">Leer en Español</span>
+                <span x-show="lang === 'es'">Read in English</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="max-w-4xl mx-auto px-6 pt-10 pb-16 text-center fade">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            <span x-show="lang === 'en'">Terms of Service</span>
+            <span x-show="lang === 'es'">Términos de Servicio</span>
+        </h1>
+
+        <p class="text-sm text-slate-500 max-w-xl mx-auto">
+            <span x-show="lang === 'en'">Last updated: April 2026</span>
+            <span x-show="lang === 'es'">Última actualización: Abril 2026</span>
+        </p>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="max-w-4xl mx-auto px-6 pb-24 fade">
+
+        <!-- ENGLISH VERSION -->
+        <div x-show="lang === 'en'">
+
+            <p>
+                These Terms of Service (“Terms”) govern your use of BuenMind’s website, products, and services. 
+                By accessing or using our site, you agree to these Terms. Please read them carefully.
+            </p>
+
+            <h2>1. Use of Our Website</h2>
+            <p>
+                You may use BuenMind for personal, non‑commercial purposes.  
+                You agree not to misuse the site, attempt unauthorized access, or engage in harmful behavior.
+            </p>
+
+            <h2>2. Wellness Disclaimer</h2>
+            <p>
+                BuenMind provides emotional wellness tools, reflections, and affirmations for general support.  
+                We do not offer medical, psychological, or therapeutic advice.  
+                Our content is not a substitute for professional care.
+            </p>
+
+            <h2>3. Purchases & Payments</h2>
+            <p>
+                When purchasing digital or physical products through BuenMind or third‑party platforms (Amazon, Walmart, TikTok Shop), 
+                you agree to their respective terms and payment policies.
+            </p>
+
+            <h2>4. Digital Products</h2>
+            <p>
+                Digital downloads, guides, and journals are delivered electronically.  
+                Due to their nature, digital products are generally non‑refundable unless required by law.
+            </p>
+
+            <h2>5. Intellectual Property</h2>
+            <p>
+                All content on BuenMind — including text, graphics, branding, affirmations, and digital tools — is owned by BuenMind.  
+                You may not copy, distribute, or reproduce our content without permission.
+            </p>
+
+            <h2>6. Email Communications</h2>
+            <p>
+                By subscribing to our email list, you agree to receive updates, affirmations, and product announcements.  
+                You may unsubscribe at any time.
+            </p>
+
+            <h2>7. Third‑Party Links</h2>
+            <p>
+                BuenMind may link to external platforms.  
+                We are not responsible for their content, policies, or practices.
+            </p>
+
+            <h2>8. Limitation of Liability</h2>
+            <p>
+                BuenMind is not liable for damages arising from the use or inability to use our website or products.  
+                Your use of our content is at your own discretion and risk.
+            </p>
+
+            <h2>9. Changes to These Terms</h2>
+            <p>
+                We may update these Terms occasionally.  
+                Continued use of the site means you accept the updated Terms.
+            </p>
+
+            <h2>10. Contact Us</h2>
+            <p>
+                For questions about these Terms, contact us at:  
+                <a href="mailto:info@buenmind.com" class="text-emerald-700 font-semibold hover:underline">info@buenmind.com</a>
+            </p>
+
+        </div>
+
+        <!-- SPANISH VERSION -->
+        <div x-show="lang === 'es'">
+
+            <p>
+                Estos Términos de Servicio (“Términos”) regulan el uso del sitio web, productos y servicios de BuenMind.  
+                Al acceder o usar nuestro sitio, aceptas estos Términos. Por favor léelos con atención.
+            </p>
+
+            <h2>1. Uso de Nuestro Sitio Web</h2>
+            <p>
+                Puedes usar BuenMind para fines personales y no comerciales.  
+                Aceptas no hacer mal uso del sitio, intentar accesos no autorizados o realizar conductas dañinas.
+            </p>
+
+            <h2>2. Descargo de Responsabilidad de Bienestar</h2>
+            <p>
+                BuenMind ofrece herramientas de bienestar emocional, reflexiones y afirmaciones para apoyo general.  
+                No ofrecemos asesoramiento médico, psicológico o terapéutico.  
+                Nuestro contenido no reemplaza la atención profesional.
+            </p>
+
+            <h2>3. Compras y Pagos</h2>
+            <p>
+                Al comprar productos digitales o físicos a través de BuenMind o plataformas externas (Amazon, Walmart, TikTok Shop), 
+                aceptas sus respectivos términos y políticas de pago.
+            </p>
+
+            <h2>4. Productos Digitales</h2>
+            <p>
+                Las descargas digitales, guías y diarios se entregan electrónicamente.  
+                Debido a su naturaleza, los productos digitales generalmente no son reembolsables salvo que la ley lo requiera.
+            </p>
+
+            <h2>5. Propiedad Intelectual</h2>
+            <p>
+                Todo el contenido de BuenMind — incluyendo texto, gráficos, marca, afirmaciones y herramientas digitales — es propiedad de BuenMind.  
+                No puedes copiar, distribuir o reproducir nuestro contenido sin permiso.
+            </p>
+
+            <h2>6. Comunicaciones por Correo</h2>
+            <p>
+                Al suscribirte a nuestra lista de correos, aceptas recibir actualizaciones, afirmaciones y anuncios de productos.  
+                Puedes darte de baja en cualquier momento.
+            </p>
+
+            <h2>7. Enlaces a Terceros</h2>
+            <p>
+                BuenMind puede enlazar a plataformas externas.  
+                No somos responsables de su contenido, políticas o prácticas.
+            </p>
+
+            <h2>8. Limitación de Responsabilidad</h2>
+            <p>
+                BuenMind no es responsable por daños derivados del uso o la imposibilidad de usar nuestro sitio o productos.  
+                El uso de nuestro contenido es bajo tu propio criterio y riesgo.
+            </p>
+
+            <h2>9. Cambios a Estos Términos</h2>
+            <p>
+                Podemos actualizar estos Términos ocasionalmente.  
+                El uso continuo del sitio significa que aceptas los Términos actualizados.
+            </p>
+
+            <h2>10. Contáctanos</h2>
+            <p>
+                Para preguntas sobre estos Términos, contáctanos en:  
+                <a href="mailto:info@buenmind.com" class="text-emerald-700 font-semibold hover:underline">info@buenmind.com</a>
+            </p>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-100 py-6 mt-4">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
+            <p>© <span id="year"></span> BuenMind. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="/privacy" class="hover:text-emerald-700">Privacy</a>
+                <a href="/terms" class="hover:text-emerald-700">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
