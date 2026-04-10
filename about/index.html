@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ lang: 'en' }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About – BuenMind</title>
+    <link rel="icon" type="image/png" href="/WebsiteFaveicon.png">
+
+    <!-- SEO -->
+    <meta name="description" content="Learn about BuenMind — a bilingual mental wellness space created for Gen X. Calm, clarity, and emotional grounding in English + Español.">
+    <meta name="keywords" content="about BuenMind, mental wellness, Gen X, bilingual wellness, Spanish, English, emotional health">
+    <meta name="author" content="BuenMind">
+
+    <!-- Tailwind + Alpine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfdfd; }
+        .fade { animation: fadeIn 1.2s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+
+<body class="text-slate-800 antialiased">
+
+    <!-- NAV -->
+    <nav class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+            <img src="/BM_MainHeaderLogo.png" alt="BuenMind Logo" class="h-12 md:h-16 w-auto">
+        </a>
+
+        <div class="flex items-center gap-4">
+            <a href="/" class="text-xs font-semibold text-slate-500 hover:text-emerald-700 transition-colors"
+               x-text="lang === 'en' ? 'Home' : 'Inicio'"></a>
+
+            <button
+                @click="lang = lang === 'en' ? 'es' : 'en'"
+                class="text-xs md:text-sm font-bold text-emerald-700 bg-white px-4 py-2 rounded-full border border-emerald-100 hover:shadow-md transition-all"
+            >
+                <span x-show="lang === 'en'">Leer en Español</span>
+                <span x-show="lang === 'es'">Read in English</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="max-w-4xl mx-auto px-6 pt-10 pb-16 text-center fade">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            <span x-show="lang === 'en'">About BuenMind</span>
+            <span x-show="lang === 'es'">Sobre BuenMind</span>
+        </h1>
+
+        <p class="text-lg text-emerald-700 italic max-w-2xl mx-auto">
+            <span x-show="lang === 'en'">A bilingual space for calm, clarity, and emotional grounding.</span>
+            <span x-show="lang === 'es'">Un espacio bilingüe para la calma, la claridad y el equilibrio emocional.</span>
+        </p>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 space-y-20 pb-24">
+
+        <!-- SECTION 1: ORIGIN STORY -->
+        <section class="grid md:grid-cols-2 gap-12 items-center fade">
+            <div>
+                <h2 class="text-2xl font-semibold mb-4">
+                    <span x-show="lang === 'en'">Why BuenMind Was Created</span>
+                    <span x-show="lang === 'es'">Por Qué Se Creó BuenMind</span>
+                </h2>
+
+                <p class="text-slate-600 leading-relaxed mb-4" x-show="lang === 'en'">
+                    BuenMind was born from a simple truth: many of us grew up without the emotional tools we needed. 
+                    Especially Gen X — the generation that learned to “push through,” stay quiet, and keep going even when overwhelmed.
+                </p>
+                <p class="text-slate-600 leading-relaxed mb-4" x-show="lang === 'es'">
+                    BuenMind nació de una verdad simple: muchos crecimos sin las herramientas emocionales que necesitábamos. 
+                    Especialmente la Generación X — la generación que aprendió a “aguantar,” quedarse callada y seguir adelante incluso cuando estaba abrumada.
+                </p>
+
+                <p class="text-slate-600 leading-relaxed" x-show="lang === 'en'">
+                    This space was created to offer gentle support, bilingual tools, and a calm corner of the internet where you don’t have to perform or pretend.
+                </p>
+                <p class="text-slate-600 leading-relaxed" x-show="lang === 'es'">
+                    Este espacio fue creado para ofrecer apoyo suave, herramientas bilingües y un rincón tranquilo del internet donde no tienes que actuar ni fingir.
+                </p>
+            </div>
+
+            <div class="bg-emerald-50 rounded-3xl p-10 border border-emerald-100 text-center shadow-sm">
+                <span class="text-5xl">🌱</span>
+                <p class="mt-4 text-emerald-800 font-medium" x-show="lang === 'en'">Calm is a skill — and you can learn it.</p>
+                <p class="mt-4 text-emerald-800 font-medium" x-show="lang === 'es'">La calma es una habilidad — y puedes aprenderla.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: BILINGUAL MISSION -->
+        <section class="bg-white rounded-[2rem] p-10 border border-slate-100 shadow-sm fade">
+            <h2 class="text-2xl font-semibold text-center mb-6">
+                <span x-show="lang === 'en'">A Bilingual Mission</span>
+                <span x-show="lang === 'es'">Una Misión Bilingüe</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <p class="text-slate-600 leading-relaxed" x-show="lang === 'en'">
+                    BuenMind honors the reality of living between languages and cultures.  
+                    Many of us think in English but feel in Spanish — or the other way around.  
+                    Wellness shouldn’t force you to choose.
+                </p>
+
+                <p class="text-slate-600 leading-relaxed" x-show="lang === 'es'">
+                    BuenMind honra la realidad de vivir entre idiomas y culturas.  
+                    Muchos pensamos en inglés pero sentimos en español — o al revés.  
+                    El bienestar no debería obligarte a elegir.
+                </p>
+
+                <p class="text-slate-600 leading-relaxed" x-show="lang === 'en'">
+                    Every tool, affirmation, and product is created in both languages so you can connect with yourself in the one that feels right that day.
+                </p>
+
+                <p class="text-slate-600 leading-relaxed" x-show="lang === 'es'">
+                    Cada herramienta, afirmación y producto se crea en ambos idiomas para que puedas conectar contigo mismo en el que se sienta correcto ese día.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 3: WHAT BUENMIND OFFERS -->
+        <section class="fade">
+            <h2 class="text-2xl font-semibold text-center mb-8">
+                <span x-show="lang === 'en'">What You’ll Find Here</span>
+                <span x-show="lang === 'es'">Lo Que Encontrarás Aquí</span>
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <h3 class="text-lg font-semibold mb-2" x-show="lang === 'en'">Daily Calm Tools</h3>
+                    <h3 class="text-lg font-semibold mb-2" x-show="lang === 'es'">Herramientas Diarias de Calma</h3>
+                    <p class="text-sm text-slate-600">
+                        <span x-show="lang === 'en'">Affirmations, grounding practices, and gentle reminders.</span>
+                        <span x-show="lang === 'es'">Afirmaciones, prácticas de conexión y recordatorios suaves.</span>
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <h3 class="text-lg font-semibold mb-2" x-show="lang === 'en'">Bilingual Products</h3>
+                    <h3 class="text-lg font-semibold mb-2" x-show="lang === 'es'">Productos Bilingües</h3>
+                    <p class="text-sm text-slate-600">
+                        <span x-show="lang === 'en'">Journals, affirmation decks, and digital tools.</span>
+                        <span x-show="lang === 'es'">Diarios, barajas de afirmaciones y herramientas digitales.</span>
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+                    <h3 class="text-lg font-semibold mb-2" x-show="lang === 'en'">A Calm Community</h3>
+                    <h3 class="text-lg font-semibold mb-2" x-show="lang === 'es'">Una Comunidad de Calma</h3>
+                    <p class="text-sm text-slate-600">
+                        <span x-show="lang === 'en'">A space where Gen X can breathe, reset, and feel seen.</span>
+                        <span x-show="lang === 'es'">Un espacio donde la Generación X puede respirar, resetear y sentirse vista.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CREATOR -->
+        <section class="grid md:grid-cols-2 gap-12 items-center fade">
+            <div>
+                <h2 class="text-2xl font-semibold mb-4">
+                    <span x-show="lang === 'en'">Who’s Behind BuenMind</span>
+                    <span x-show="lang === 'es'">Quién Está Detrás de BuenMind</span>
+                </h2>
+
+                <p class="text-slate-600 leading-relaxed mb-4" x-show="lang === 'en'">
+                    BuenMind was created by a Gen X bilingual creator who understands the emotional weight of being “the strong one,” the responsible one, the one who keeps everything together.
+                </p>
+                <p class="text-slate-600 leading-relaxed mb-4" x-show="lang === 'es'">
+                    BuenMind fue creado por un creador bilingüe de la Generación X que entiende el peso emocional de ser “el fuerte,” el responsable, el que mantiene todo en orden.
+                </p>
+
+                <p class="text-slate-600 leading-relaxed" x-show="lang === 'en'">
+                    This brand is built with compassion, humor, and real‑life experience — not perfection.
+                </p>
+                <p class="text-slate-600 leading-relaxed" x-show="lang === 'es'">
+                    Esta marca está construida con compasión, humor y experiencia real — no perfección.
+                </p>
+            </div>
+
+            <div class="bg-emerald-50 rounded-3xl p-10 border border-emerald-100 text-center shadow-sm">
+                <span class="text-5xl">💛</span>
+                <p class="mt-4 text-emerald-800 font-medium" x-show="lang === 'en'">You’re not behind. You’re not broken. You’re not alone.</p>
+                <p class="mt-4 text-emerald-800 font-medium" x-show="lang === 'es'">No estás atrasado. No estás roto. No estás solo.</p>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="text-center fade">
+            <h2 class="text-xl font-semibold mb-3">
+                <span x-show="lang === 'en'">Want to Connect?</span>
+                <span x-show="lang === 'es'">¿Quieres Conectar?</span>
+            </h2>
+
+            <a href="mailto:info@buenmind.com" class="text-emerald-700 font-semibold hover:underline">
+                info@buenmind.com
+            </a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-100 py-6 mt-4">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
+            <p>© <span id="year"></span> BuenMind. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="/privacy" class="hover:text-emerald-700">Privacy</a>
+                <a href="/terms" class="hover:text-emerald-700">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
