@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ lang: 'en' }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy – BuenMind</title>
+    <link rel="icon" type="image/png" href="/WebsiteFaveicon.png">
+
+    <!-- SEO -->
+    <meta name="description" content="BuenMind Privacy Policy – how we collect, use, and protect your information. Bilingual English + Español.">
+    <meta name="keywords" content="BuenMind privacy policy, data protection, bilingual privacy, wellness privacy">
+    <meta name="author" content="BuenMind">
+
+    <!-- Tailwind + Alpine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfdfd; }
+        .fade { animation: fadeIn 1.2s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        h2 { margin-top: 2rem; margin-bottom: 1rem; }
+        p, li { margin-bottom: 1rem; }
+    </style>
+</head>
+
+<body class="text-slate-800 antialiased">
+
+    <!-- NAV -->
+    <nav class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+            <img src="/BM_MainHeaderLogo.png" alt="BuenMind Logo" class="h-12 md:h-16 w-auto">
+        </a>
+
+        <div class="flex items-center gap-4">
+            <a href="/" class="text-xs font-semibold text-slate-500 hover:text-emerald-700 transition-colors"
+               x-text="lang === 'en' ? 'Home' : 'Inicio'"></a>
+
+            <button
+                @click="lang = lang === 'en' ? 'es' : 'en'"
+                class="text-xs md:text-sm font-bold text-emerald-700 bg-white px-4 py-2 rounded-full border border-emerald-100 hover:shadow-md transition-all"
+            >
+                <span x-show="lang === 'en'">Leer en Español</span>
+                <span x-show="lang === 'es'">Read in English</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="max-w-4xl mx-auto px-6 pt-10 pb-16 text-center fade">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            <span x-show="lang === 'en'">Privacy Policy</span>
+            <span x-show="lang === 'es'">Política de Privacidad</span>
+        </h1>
+
+        <p class="text-sm text-slate-500 max-w-xl mx-auto">
+            <span x-show="lang === 'en'">Last updated: April 2026</span>
+            <span x-show="lang === 'es'">Última actualización: Abril 2026</span>
+        </p>
+    </header>
+
+    <!-- CONTENT -->
+    <main class="max-w-4xl mx-auto px-6 pb-24 fade">
+
+        <!-- ENGLISH VERSION -->
+        <div x-show="lang === 'en'">
+
+            <p>
+                At BuenMind, your privacy matters. This policy explains what information we collect, how we use it, and the choices you have. 
+                By using our website, products, or services, you agree to the practices described here.
+            </p>
+
+            <h2>1. Information We Collect</h2>
+            <p>We collect information to provide a better experience and improve our tools. This may include:</p>
+
+            <ul class="list-disc pl-6">
+                <li><strong>Personal Information:</strong> Name, email address, or contact details when you subscribe, purchase, or contact us.</li>
+                <li><strong>Usage Data:</strong> Pages visited, time on site, device type, and general analytics.</li>
+                <li><strong>Purchase Information:</strong> When you buy products through our site or third‑party platforms.</li>
+            </ul>
+
+            <h2>2. How We Use Your Information</h2>
+            <p>We use your information to:</p>
+
+            <ul class="list-disc pl-6">
+                <li>Provide and improve our wellness tools and products.</li>
+                <li>Send updates, newsletters, or product announcements.</li>
+                <li>Respond to messages or customer support requests.</li>
+                <li>Analyze website performance and user behavior.</li>
+            </ul>
+
+            <h2>3. Sharing Your Information</h2>
+            <p>
+                We do not sell your personal information.  
+                We may share data with trusted service providers who help us operate our website, email list, payments, or analytics.
+            </p>
+
+            <h2>4. Cookies & Tracking</h2>
+            <p>
+                BuenMind uses cookies and similar technologies to improve your experience, analyze traffic, and personalize content. 
+                You can disable cookies in your browser settings.
+            </p>
+
+            <h2>5. Third‑Party Services</h2>
+            <p>
+                Our website may link to platforms like Amazon, Walmart, TikTok Shop, or social media.  
+                Their privacy practices are separate from ours. We encourage you to review their policies.
+            </p>
+
+            <h2>6. Data Protection</h2>
+            <p>
+                We take reasonable steps to protect your information through secure hosting, encryption, and limited access.
+            </p>
+
+            <h2>7. Your Rights</h2>
+            <p>You may request to:</p>
+
+            <ul class="list-disc pl-6">
+                <li>Access the personal data we hold about you.</li>
+                <li>Update or correct your information.</li>
+                <li>Unsubscribe from emails at any time.</li>
+                <li>Request deletion of your data, where applicable.</li>
+            </ul>
+
+            <h2>8. Children’s Privacy</h2>
+            <p>
+                BuenMind is not intended for children under 13.  
+                We do not knowingly collect information from minors.
+            </p>
+
+            <h2>9. Changes to This Policy</h2>
+            <p>
+                We may update this policy occasionally.  
+                The “Last updated” date reflects the most recent version.
+            </p>
+
+            <h2>10. Contact Us</h2>
+            <p>
+                If you have questions about this Privacy Policy, contact us at:  
+                <a href="mailto:info@buenmind.com" class="text-emerald-700 font-semibold hover:underline">info@buenmind.com</a>
+            </p>
+
+        </div>
+
+        <!-- SPANISH VERSION -->
+        <div x-show="lang === 'es'">
+
+            <p>
+                En BuenMind, tu privacidad es importante. Esta política explica qué información recopilamos, cómo la usamos y tus opciones. 
+                Al usar nuestro sitio web, productos o servicios, aceptas las prácticas descritas aquí.
+            </p>
+
+            <h2>1. Información que Recopilamos</h2>
+            <p>Recopilamos información para ofrecer una mejor experiencia y mejorar nuestras herramientas. Esto puede incluir:</p>
+
+            <ul class="list-disc pl-6">
+                <li><strong>Información Personal:</strong> Nombre, correo electrónico o datos de contacto cuando te suscribes, compras o nos escribes.</li>
+                <li><strong>Datos de Uso:</strong> Páginas visitadas, tiempo en el sitio, tipo de dispositivo y análisis generales.</li>
+                <li><strong>Información de Compra:</strong> Cuando compras productos en nuestro sitio o plataformas externas.</li>
+            </ul>
+
+            <h2>2. Cómo Usamos tu Información</h2>
+            <p>Usamos tu información para:</p>
+
+            <ul class="list-disc pl-6">
+                <li>Proveer y mejorar nuestras herramientas y productos de bienestar.</li>
+                <li>Enviar actualizaciones, boletines o anuncios de productos.</li>
+                <li>Responder mensajes o solicitudes de soporte.</li>
+                <li>Analizar el rendimiento del sitio y el comportamiento de los usuarios.</li>
+            </ul>
+
+            <h2>3. Compartir tu Información</h2>
+            <p>
+                No vendemos tu información personal.  
+                Podemos compartir datos con proveedores confiables que nos ayudan a operar el sitio, la lista de correos, pagos o análisis.
+            </p>
+
+            <h2>4. Cookies y Seguimiento</h2>
+            <p>
+                BuenMind utiliza cookies y tecnologías similares para mejorar tu experiencia, analizar tráfico y personalizar contenido.  
+                Puedes desactivar las cookies en la configuración de tu navegador.
+            </p>
+
+            <h2>5. Servicios de Terceros</h2>
+            <p>
+                Nuestro sitio puede enlazar a plataformas como Amazon, Walmart, TikTok Shop o redes sociales.  
+                Sus prácticas de privacidad son independientes de las nuestras. Te recomendamos revisar sus políticas.
+            </p>
+
+            <h2>6. Protección de Datos</h2>
+            <p>
+                Tomamos medidas razonables para proteger tu información mediante alojamiento seguro, encriptación y acceso limitado.
+            </p>
+
+            <h2>7. Tus Derechos</h2>
+            <p>Puedes solicitar:</p>
+
+            <ul class="list-disc pl-6">
+                <li>Acceder a los datos personales que tenemos sobre ti.</li>
+                <li>Actualizar o corregir tu información.</li>
+                <li>Darte de baja de correos en cualquier momento.</li>
+                <li>Solicitar la eliminación de tus datos, cuando aplique.</li>
+            </ul>
+
+            <h2>8. Privacidad de Menores</h2>
+            <p>
+                BuenMind no está dirigido a menores de 13 años.  
+                No recopilamos información de menores de manera intencional.
+            </p>
+
+            <h2>9. Cambios a Esta Política</h2>
+            <p>
+                Podemos actualizar esta política ocasionalmente.  
+                La fecha de “Última actualización” refleja la versión más reciente.
+            </p>
+
+            <h2>10. Contáctanos</h2>
+            <p>
+                Si tienes preguntas sobre esta Política de Privacidad, contáctanos en:  
+                <a href="mailto:info@buenmind.com" class="text-emerald-700 font-semibold hover:underline">info@buenmind.com</a>
+            </p>
+
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-100 py-6 mt-4">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
+            <p>© <span id="year"></span> BuenMind. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="/privacy" class="hover:text-emerald-700">Privacy</a>
+                <a href="/terms" class="hover:text-emerald-700">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
