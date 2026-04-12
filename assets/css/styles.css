@@ -1,1 +1,49 @@
+/* BuenMind – Custom Styles
+   These styles lightly enhance Tailwind without overriding its system.
+*/
 
+/* Smooth fade-in for sections */
+.section-fade {
+    animation: fadeIn 1.2s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Soft hover lift for cards */
+.card-hover {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Smooth transitions for buttons and links */
+.btn-smooth {
+    transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Typography enhancements */
+h1, h2, h3 {
+    letter-spacing: -0.02em;
+}
+
+p {
+    line-height: 1.65;
+}
+
+/* Optional: subtle divider line */
+.divider {
+    height: 1px;
+    background: rgba(0, 0, 0, 0.06);
+    margin: 2rem 0;
+}
+
+/* Optional: custom scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
