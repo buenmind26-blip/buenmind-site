@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ lang: 'en' }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Signs You’re Emotionally Overloaded – BuenMind</title>
+    <link rel="icon" type="image/png" href="/WebsiteFavicon.png">
 
+    <meta name="description" content="Learn the subtle signs of emotional overload and how to gently reset. Bilingual English + Español.">
+    <meta name="keywords" content="emotional overload, burnout, Gen X wellness, stress, calm, bilingual wellness">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfdfd; }
+        article p { margin-bottom: 1rem; }
+        article h2 { margin-top: 2rem; margin-bottom: 1rem; }
+    </style>
+</head>
+
+<body class="text-slate-800 antialiased">
+
+    <!-- NAV -->
+    <nav class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+            <img src="/BM_MainHeaderLogo.png" class="h-12 md:h-16">
+        </a>
+
+        <div class="flex items-center gap-4">
+            <a href="/blog" class="text-xs font-semibold text-slate-500 hover:text-emerald-700"
+               x-text="lang === 'en' ? 'Back to Blog' : 'Volver al Blog'"></a>
+
+            <button @click="lang = lang === 'en' ? 'es' : 'en'"
+                class="text-xs md:text-sm font-bold text-emerald-700 bg-white px-4 py-2 rounded-full border">
+                <span x-show="lang === 'en'">Leer en Español</span>
+                <span x-show="lang === 'es'">Read in English</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            <span x-show="lang === 'en'">5 Signs You’re Emotionally Overloaded</span>
+            <span x-show="lang === 'es'">5 Señales de que Estás Emocionalmente Sobrecargado</span>
+        </h1>
+
+        <p class="text-sm text-slate-500 mb-2">
+            <span x-show="lang === 'en'">By BuenMind • Updated April 2026</span>
+            <span x-show="lang === 'es'">Por BuenMind • Actualizado Abril 2026</span>
+        </p>
+
+        <p class="text-base text-emerald-700 italic max-w-xl mx-auto">
+            <span x-show="lang === 'en'">Your body whispers before it shouts. Here’s how to notice the early signs.</span>
+            <span x-show="lang === 'es'">Tu cuerpo susurra antes de gritar. Aquí te mostramos cómo notar las señales tempranas.</span>
+        </p>
+    </header>
+
+    <!-- ARTICLE -->
+    <main class="max-w-3xl mx-auto px-6 pb-24">
+        <article class="prose prose-slate max-w-none">
+
+            <!-- ENGLISH -->
+            <div x-show="lang === 'en'">
+
+                <p>
+                    Emotional overload doesn’t always look dramatic. Sometimes it’s quiet, subtle, and easy to dismiss — especially for Gen X, a generation raised to “push through” no matter what.
+                </p>
+
+                <h2>1. You feel tired even after resting</h2>
+                <p>
+                    When your mind is overloaded, rest doesn’t feel restorative. You wake up already drained.
+                </p>
+
+                <h2>2. Small tasks feel unusually heavy</h2>
+                <p>
+                    Sending an email, folding laundry, or making a decision feels like climbing a hill.
+                </p>
+
+                <h2>3. You’re more irritable than usual</h2>
+                <p>
+                    Emotional overload makes your nervous system sensitive. Little things feel big.
+                </p>
+
+                <h2>4. You feel disconnected from yourself</h2>
+                <p>
+                    You move through the day on autopilot, not fully present in your own life.
+                </p>
+
+                <h2>5. You avoid things you normally enjoy</h2>
+                <p>
+                    When your emotional bandwidth is low, even good things feel like “too much.”
+                </p>
+
+                <blockquote>
+                    “You’re not weak — you’re overloaded. And overload can be softened.”
+                </blockquote>
+
+                <h2>How to reset gently</h2>
+                <ul>
+                    <li>Pause for 60 seconds and breathe slowly.</li>
+                    <li>Place a hand on your chest to reconnect with your body.</li>
+                    <li>Say something kind to yourself.</li>
+                    <li>Do one small thing — not everything.</li>
+                </ul>
+
+            </div>
+
+            <!-- SPANISH -->
+            <div x-show="lang === 'es'">
+
+                <p>
+                    La sobrecarga emocional no siempre se ve dramática. A veces es silenciosa, sutil y fácil de ignorar — especialmente para la Generación X, criada para “aguantar” sin importar qué.
+                </p>
+
+                <h2>1. Te sientes cansado incluso después de descansar</h2>
+                <p>
+                    Cuando tu mente está sobrecargada, el descanso no restaura. Te despiertas agotado.
+                </p>
+
+                <h2>2. Las tareas pequeñas se sienten pesadas</h2>
+                <p>
+                    Enviar un correo, doblar ropa o tomar una decisión se siente como subir una montaña.
+                </p>
+
+                <h2>3. Estás más irritable de lo normal</h2>
+                <p>
+                    La sobrecarga emocional sensibiliza tu sistema nervioso. Las cosas pequeñas se sienten grandes.
+                </p>
+
+                <h2>4. Te sientes desconectado de ti mismo</h2>
+                <p>
+                    Pasas el día en piloto automático, sin estar realmente presente.
+                </p>
+
+                <h2>5. Evitas cosas que normalmente disfrutas</h2>
+                <p>
+                    Cuando tu energía emocional es baja, incluso lo bueno se siente como “demasiado.”
+                </p>
+
+                <blockquote>
+                    “No eres débil — estás sobrecargado. Y la sobrecarga puede suavizarse.”
+                </blockquote>
+
+                <h2>Cómo resetear suavemente</h2>
+                <ul>
+                    <li>Pausa 60 segundos y respira lento.</li>
+                    <li>Coloca una mano en tu pecho para reconectar.</li>
+                    <li>Dite algo amable.</li>
+                    <li>Haz una sola cosa — no todo.</li>
+                </ul>
+
+            </div>
+
+        </article>
+    </main>
+
+</body>
+</html>
