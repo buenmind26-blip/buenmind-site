@@ -1,160 +1,160 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ lang: 'en' }">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>5 Signs You’re Emotionally Overloaded – BuenMind</title>
-    <link rel="icon" type="image/png" href="/WebsiteFavicon.png">
-
-    <meta name="description" content="Learn the subtle signs of emotional overload and how to gently reset. Bilingual English + Español.">
-    <meta name="keywords" content="emotional overload, burnout, Gen X wellness, stress, calm, bilingual wellness">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfdfd; }
-        article p { margin-bottom: 1rem; }
-        article h2 { margin-top: 2rem; margin-bottom: 1rem; }
-    </style>
+    <title>5 Signs You’re Emotionally Overloaded | BuenMind</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="5 signs you’re emotionally overloaded and gentle ways to reset, in a calm, bilingual format for Gen X.">
 </head>
-
-<body class="text-slate-800 antialiased">
-
-    <!-- NAV -->
-    <nav class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-3">
-            <img src="/BM_MainHeaderLogo.png" class="h-12 md:h-16">
-        </a>
-
-        <div class="flex items-center gap-4">
-            <a href="/blog" class="text-xs font-semibold text-slate-500 hover:text-emerald-700"
-               x-text="lang === 'en' ? 'Back to Blog' : 'Volver al Blog'"></a>
-
-            <button @click="lang = lang === 'en' ? 'es' : 'en'"
-                class="text-xs md:text-sm font-bold text-emerald-700 bg-white px-4 py-2 rounded-full border">
-                <span x-show="lang === 'en'">Leer en Español</span>
-                <span x-show="lang === 'es'">Read in English</span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- HEADER -->
-    <header class="max-w-3xl mx-auto px-6 pt-10 pb-10 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">
-            <span x-show="lang === 'en'">5 Signs You’re Emotionally Overloaded</span>
-            <span x-show="lang === 'es'">5 Señales de que Estás Emocionalmente Sobrecargado</span>
+<body class="bg-slate-50 text-slate-900">
+    <header class="max-w-4xl mx-auto px-4 pt-10 pb-6">
+        <a href="/blog/" class="text-sm text-slate-500 hover:text-slate-700">&larr; Back to Calm Library</a>
+        <h1 class="mt-4 text-3xl md:text-4xl font-semibold tracking-tight text-slate-900">
+            5 Signs You’re Emotionally Overloaded
         </h1>
-
-        <p class="text-sm text-slate-500 mb-2">
-            <span x-show="lang === 'en'">By BuenMind • Updated April 2026</span>
-            <span x-show="lang === 'es'">Por BuenMind • Actualizado Abril 2026</span>
+        <p class="mt-2 text-base text-slate-600">
+            Cómo reconocer cuando estás emocionalmente sobrecargado y qué puedes hacer para suavizar el peso.
         </p>
-
-        <p class="text-base text-emerald-700 italic max-w-xl mx-auto">
-            <span x-show="lang === 'en'">Your body whispers before it shouts. Here’s how to notice the early signs.</span>
-            <span x-show="lang === 'es'">Tu cuerpo susurra antes de gritar. Aquí te mostramos cómo notar las señales tempranas.</span>
+        <p class="mt-3 text-xs uppercase tracking-[0.2em] text-slate-500">
+            Stress &amp; Overload · Estrés y Sobrecarga
         </p>
     </header>
 
-    <!-- ARTICLE -->
-    <main class="max-w-3xl mx-auto px-6 pb-24">
-        <article class="prose prose-slate max-w-none">
+    <main class="max-w-4xl mx-auto px-4 pb-16">
+        <!-- Hero image -->
+        <div class="w-full mb-10">
+            <img
+                src="/assets/images/blog/emotional-overload-hero.png"
+                alt="Calm shoreline at early morning with soft pastel sky and gentle waves."
+                class="w-full h-auto rounded-3xl shadow-sm border border-slate-100"
+            >
+        </div>
 
-            <!-- ENGLISH -->
-            <div x-show="lang === 'en'">
+        <!-- Intro -->
+        <section class="prose prose-slate max-w-none">
+            <p>
+                Some days you’re not “dramatic” or “too sensitive”—you’re simply carrying more than your nervous system
+                can process. Emotional overload is what happens when your brain and body are trying to handle too many
+                demands, feelings, and worries at once. It’s not a character flaw; it’s a capacity issue.
+            </p>
+            <p>
+                A few gentle signs can help you notice, “Okay, I’m at my limit.” Naming it is the first step to
+                softening it.
+            </p>
+        </section>
 
-                <p>
-                    Emotional overload doesn’t always look dramatic. Sometimes it’s quiet, subtle, and easy to dismiss — especially for Gen X, a generation raised to “push through” no matter what.
-                </p>
+        <!-- Spanish intro -->
+        <section class="prose prose-slate max-w-none mt-8 border-t border-slate-200 pt-6">
+            <h2 class="text-sm font-semibold tracking-[0.2em] uppercase text-slate-500">
+                Versión en Español
+            </h2>
+            <p>
+                Hay días en los que no eres “exagerado” ni “demasiado sensible”; simplemente estás cargando más de lo
+                que tu sistema nervioso puede procesar. La sobrecarga emocional aparece cuando tu mente y tu cuerpo
+                intentan manejar demasiadas demandas, emociones y preocupaciones al mismo tiempo. No es un defecto de
+                carácter; es un tema de capacidad.
+            </p>
+            <p>
+                Hay algunas señales suaves que pueden ayudarte a notar: “Ok, llegué a mi límite”. Ponerle nombre es el
+                primer paso para aliviarlo.
+            </p>
+        </section>
 
-                <h2>1. You feel tired even after resting</h2>
-                <p>
-                    When your mind is overloaded, rest doesn’t feel restorative. You wake up already drained.
-                </p>
+        <!-- 5 signs (EN) -->
+        <section class="prose prose-slate max-w-none mt-10">
+            <h2>5 Signs You’re Emotionally Overloaded</h2>
 
-                <h2>2. Small tasks feel unusually heavy</h2>
-                <p>
-                    Sending an email, folding laundry, or making a decision feels like climbing a hill.
-                </p>
+            <h3>1. Your reactions feel “too big” for the situation</h3>
+            <p>
+                You snap at small things, cry easily, or feel rage over something minor. It’s not that you’re “over the
+                top”—it’s that your system is already full, so even a tiny extra stressor spills the cup.
+            </p>
 
-                <h2>3. You’re more irritable than usual</h2>
-                <p>
-                    Emotional overload makes your nervous system sensitive. Little things feel big.
-                </p>
+            <h3>2. Your brain feels foggy or scattered</h3>
+            <p>
+                You reread the same sentence, forget what you were doing, or struggle to make simple decisions. When
+                your emotional load is high, your focus and memory often take a hit.
+            </p>
 
-                <h2>4. You feel disconnected from yourself</h2>
-                <p>
-                    You move through the day on autopilot, not fully present in your own life.
-                </p>
+            <h3>3. Your body is tense, tired, or both</h3>
+            <p>
+                Tight shoulders, clenched jaw, headaches, stomach issues, or feeling exhausted even after sleeping can
+                all be signs that your body is carrying stress quietly in the background.
+            </p>
 
-                <h2>5. You avoid things you normally enjoy</h2>
-                <p>
-                    When your emotional bandwidth is low, even good things feel like “too much.”
-                </p>
+            <h3>4. You start avoiding people or responsibilities</h3>
+            <p>
+                Texts go unanswered, emails pile up, and even fun plans feel like “too much.” Emotional overload often
+                makes normal life feel heavier than usual.
+            </p>
 
-                <blockquote>
-                    “You’re not weak — you’re overloaded. And overload can be softened.”
-                </blockquote>
+            <h3>5. You feel numb, checked out, or “on autopilot”</h3>
+            <p>
+                Instead of feeling everything intensely, sometimes overload shows up as feeling nothing at all. You go
+                through the motions, but you don’t feel present.
+            </p>
+        </section>
 
-                <h2>How to reset gently</h2>
-                <ul>
-                    <li>Pause for 60 seconds and breathe slowly.</li>
-                    <li>Place a hand on your chest to reconnect with your body.</li>
-                    <li>Say something kind to yourself.</li>
-                    <li>Do one small thing — not everything.</li>
-                </ul>
+        <!-- 5 signs (ES) -->
+        <section class="prose prose-slate max-w-none mt-10 border-t border-slate-200 pt-6">
+            <h2>5 Señales de que Estás Emocionalmente Sobrecargado</h2>
 
-            </div>
+            <h3>1. Tus reacciones se sienten “demasiado fuertes”</h3>
+            <p>
+                Estallas por cosas pequeñas, lloras con facilidad o sientes mucha rabia por algo mínimo. No es que seas
+                “exagerado”; es que tu sistema ya está lleno y cualquier cosa extra hace que el vaso se derrame.
+            </p>
 
-            <!-- SPANISH -->
-            <div x-show="lang === 'es'">
+            <h3>2. Tu mente se siente nublada o dispersa</h3>
+            <p>
+                Lees lo mismo varias veces, olvidas lo que ibas a hacer o te cuesta tomar decisiones simples. Cuando la
+                carga emocional es alta, la concentración y la memoria suelen resentirse.
+            </p>
 
-                <p>
-                    La sobrecarga emocional no siempre se ve dramática. A veces es silenciosa, sutil y fácil de ignorar — especialmente para la Generación X, criada para “aguantar” sin importar qué.
-                </p>
+            <h3>3. Tu cuerpo está tenso, cansado o ambas cosas</h3>
+            <p>
+                Hombros rígidos, mandíbula apretada, dolores de cabeza, malestar estomacal o cansancio incluso después
+                de dormir pueden ser señales de que tu cuerpo está cargando estrés en silencio.
+            </p>
 
-                <h2>1. Te sientes cansado incluso después de descansar</h2>
-                <p>
-                    Cuando tu mente está sobrecargada, el descanso no restaura. Te despiertas agotado.
-                </p>
+            <h3>4. Empiezas a evitar personas o responsabilidades</h3>
+            <p>
+                Dejas mensajes sin responder, los correos se acumulan y hasta los planes agradables se sienten como “demasiado”.
+                La sobrecarga emocional hace que la vida cotidiana pese más.
+            </p>
 
-                <h2>2. Las tareas pequeñas se sienten pesadas</h2>
-                <p>
-                    Enviar un correo, doblar ropa o tomar una decisión se siente como subir una montaña.
-                </p>
+            <h3>5. Te sientes apagado, desconectado o en “piloto automático”</h3>
+            <p>
+                En lugar de sentir todo con intensidad, a veces la sobrecarga se muestra como no sentir casi nada. Haces
+                las cosas, pero no te sientes realmente presente.
+            </p>
+        </section>
 
-                <h2>3. Estás más irritable de lo normal</h2>
-                <p>
-                    La sobrecarga emocional sensibiliza tu sistema nervioso. Las cosas pequeñas se sienten grandes.
-                </p>
+        <!-- Gentle closing -->
+        <section class="prose prose-slate max-w-none mt-10">
+            <h2>What to Do When You Notice These Signs</h2>
+            <p>
+                Emotional overload doesn’t mean you’re failing; it means you’ve been carrying a lot for a long time.
+                Start small: one slow breath, one glass of water, one honest “I’m at my limit today.” If these signs are
+                intense, long‑lasting, or scary, reaching out to a mental health professional or someone you trust can
+                be an important next step.
+            </p>
+            <p class="text-sm text-slate-500">
+                This article is for general information only and is not a substitute for professional mental health care.
+            </p>
+        </section>
 
-                <h2>4. Te sientes desconectado de ti mismo</h2>
-                <p>
-                    Pasas el día en piloto automático, sin estar realmente presente.
-                </p>
-
-                <h2>5. Evitas cosas que normalmente disfrutas</h2>
-                <p>
-                    Cuando tu energía emocional es baja, incluso lo bueno se siente como “demasiado.”
-                </p>
-
-                <blockquote>
-                    “No eres débil — estás sobrecargado. Y la sobrecarga puede suavizarse.”
-                </blockquote>
-
-                <h2>Cómo resetear suavemente</h2>
-                <ul>
-                    <li>Pausa 60 segundos y respira lento.</li>
-                    <li>Coloca una mano en tu pecho para reconectar.</li>
-                    <li>Dite algo amable.</li>
-                    <li>Haz una sola cosa — no todo.</li>
-                </ul>
-
-            </div>
-
-        </article>
+        <!-- Downloads -->
+        <section class="mt-12 flex flex-wrap gap-4">
+            <a href="/assets/pdfs/emotional-overload-article.pdf"
+               class="inline-flex items-center justify-center px-5 py-3 rounded-full bg-slate-900 text-slate-50 text-sm font-medium hover:bg-slate-800">
+                Download Article PDF
+            </a>
+            <a href="/assets/pdfs/calm-library-starter-pack.pdf"
+               class="inline-flex items-center justify-center px-5 py-3 rounded-full border border-slate-300 text-sm font-medium text-slate-800 bg-white hover:bg-slate-50">
+                Download Calm Library Starter Pack
+            </a>
+        </section>
     </main>
-
 </body>
 </html>
