@@ -1,3 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{ lang: 'en' }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog – BuenMind</title>
+    <link rel="icon" type="image/png" href="/WebsiteFaveicon.png">
+
+    <!-- SEO -->
+    <meta name="description" content="The BuenMind Calm Library — bilingual articles on stress, burnout, affirmations, and emotional wellness for Gen X.">
+    <meta name="keywords" content="BuenMind blog, wellness articles, Gen X mental health, affirmations, bilingual wellness, emotional balance">
+    <meta name="author" content="BuenMind">
+
+    <!-- Tailwind + Alpine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfdfd; }
+        .fade { animation: fadeIn 1.2s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+
+<body class="text-slate-800 antialiased">
+
+    <!-- NAV -->
+    <nav class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+            <img src="/BM_MainHeaderLogo.png" alt="BuenMind Logo" class="h-12 md:h-16 w-auto">
+        </a>
+
+        <div class="flex items-center gap-4">
+            <a href="/" class="text-xs font-semibold text-slate-500 hover:text-emerald-700 transition-colors"
+               x-text="lang === 'en' ? 'Home' : 'Inicio'"></a>
+
+            <button
+                @click="lang = lang === 'en' ? 'es' : 'en'"
+                class="text-xs md:text-sm font-bold text-emerald-700 bg-white px-4 py-2 rounded-full border border-emerald-100 hover:shadow-md transition-all"
+            >
+                <span x-show="lang === 'en'">Leer en Español</span>
+                <span x-show="lang === 'es'">Read in English</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="max-w-4xl mx-auto px-6 pt-10 pb-16 text-center fade">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+            <span x-show="lang === 'en'">The Calm Library</span>
+            <span x-show="lang === 'es'">La Biblioteca de Calma</span>
+        </h1>
+
+        <p class="text-lg text-emerald-700 italic max-w-2xl mx-auto">
+            <span x-show="lang === 'en'">Bilingual reflections, tools, and gentle guidance for Gen X minds.</span>
+            <span x-show="lang === 'es'">Reflexiones, herramientas y guía suave para mentes de la Generación X.</span>
+        </p>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 pb-24 space-y-16">
+
+        <!-- CATEGORY FILTERS -->
+        <section class="fade">
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <button class="px-4 py-2 rounded-full text-xs font-semibold bg-emerald-700 text-white hover:bg-emerald-800 transition-colors">
+                    <span x-show="lang === 'en'">All</span>
+                    <span x-show="lang === 'es'">Todos</span>
+                </button>
+
+                <button class="px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-emerald-300 hover:text-emerald-700 transition-colors">
+                    <span x-show="lang === 'en'">Stress & Burnout</span>
+                    <span x-show="lang === 'es'">Estrés y Burnout</span>
+                </button>
+
+                <button class="px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-emerald-300 hover:text-emerald-700 transition-colors">
+                    <span x-show="lang === 'en'">Affirmations</span>
+                    <span x-show="lang === 'es'">Afirmaciones</span>
+                </button>
+
+                <button class="px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-emerald-300 hover:text-emerald-700 transition-colors">
+                    <span x-show="lang === 'en'">Routines</span>
+                    <span x-show="lang === 'es'">Rutinas</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- BLOG GRID -->
 <section class="grid md:grid-cols-3 gap-6 fade">
 
     <!-- POST 1 — Emotional Overload -->
@@ -91,3 +179,37 @@
     </article>
 
 </section>
+        <!-- PAGINATION (future-ready) -->
+        <section class="fade">
+            <div class="flex justify-center gap-3 mt-10">
+                <button class="px-4 py-2 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-600 hover:border-emerald-300 hover:text-emerald-700 transition-colors">
+                    1
+                </button>
+                <button class="px-4 py-2 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-600 hover:border-emerald-300 hover:text-emerald-700 transition-colors">
+                    2
+                </button>
+                <button class="px-4 py-2 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-600 hover:border-emerald-300 hover:text-emerald-700 transition-colors">
+                    →
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-100 py-6 mt-4">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
+            <p>© <span id="year"></span> BuenMind. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="/privacy" class="hover:text-emerald-700">Privacy</a>
+                <a href="/terms" class="hover:text-emerald-700">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
