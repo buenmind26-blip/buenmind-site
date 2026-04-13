@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ lang: 'en' }">
+<html lang="en" x-data="blogPage()">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +20,7 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfdfd; }
         .fade { animation: fadeIn 1.2s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+        .thumb-shadow { box-shadow: 0 8px 22px rgba(0,0,0,0.08); }
     </style>
 </head>
 
@@ -36,7 +37,7 @@
                x-text="lang === 'en' ? 'Home' : 'Inicio'"></a>
 
             <button
-                @click="lang = lang === 'en' ? 'es' : 'en'"
+                @click="toggleLang()"
                 class="text-xs md:text-sm font-bold text-emerald-700 bg-white px-4 py-2 rounded-full border border-emerald-100 hover:shadow-md transition-all"
             >
                 <span x-show="lang === 'en'">Leer en Español</span>
@@ -46,16 +47,26 @@
     </nav>
 
     <!-- HEADER -->
-    <header class="max-w-4xl mx-auto px-6 pt-10 pb-16 text-center fade">
+    <header class="max-w-4xl mx-auto px-6 pt-10 pb-10 text-center fade">
         <h1 class="text-4xl md:text-5xl font-bold mb-4">
             <span x-show="lang === 'en'">The Calm Library</span>
             <span x-show="lang === 'es'">La Biblioteca de Calma</span>
         </h1>
 
-        <p class="text-lg text-emerald-700 italic max-w-2xl mx-auto">
+        <p class="text-lg text-emerald-700 italic max-w-2xl mx-auto mb-6">
             <span x-show="lang === 'en'">Bilingual reflections, tools, and gentle guidance for Gen X minds.</span>
             <span x-show="lang === 'es'">Reflexiones, herramientas y guía suave para mentes de la Generación X.</span>
         </p>
+
+        <!-- SEARCH BAR -->
+        <div class="max-w-md mx-auto">
+            <input 
+                type="text"
+                placeholder="Search articles..."
+                x-model="search"
+                class="w-full px-4 py-3 rounded-full border border-slate-200 shadow-sm focus:ring-2 focus:ring-emerald-300 focus:outline-none"
+            >
+        </div>
     </header>
 
     <main class="max-w-6xl mx-auto px-6 pb-24 space-y-16">
@@ -63,108 +74,80 @@
         <!-- CATEGORY FILTERS -->
         <section class="fade">
             <div class="flex flex-wrap justify-center gap-3 mb-10">
-                <button class="px-4 py-2 rounded-full text-xs font-semibold bg-emerald-700 text-white hover:bg-emerald-800 transition-colors">
+
+                <button @click="setCategory('all')"
+                    :class="category === 'all' ? activeFilter : inactiveFilter">
                     <span x-show="lang === 'en'">All</span>
                     <span x-show="lang === 'es'">Todos</span>
                 </button>
 
-                <button class="px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-emerald-300 hover:text-emerald-700 transition-colors">
-                    <span x-show="lang === 'en'">Stress & Burnout</span>
-                    <span x-show="lang === 'es'">Estrés y Burnout</span>
+                <button @click="setCategory('stress')"
+                    :class="category === 'stress' ? activeFilter : inactiveFilter">
+                    <span x-show="lang === 'en'">Stress & Overload</span>
+                    <span x-show="lang === 'es'">Estrés y Sobrecarga</span>
                 </button>
 
-                <button class="px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-emerald-300 hover:text-emerald-700 transition-colors">
+                <button @click="setCategory('affirmations')"
+                    :class="category === 'affirmations' ? activeFilter : inactiveFilter">
                     <span x-show="lang === 'en'">Affirmations</span>
                     <span x-show="lang === 'es'">Afirmaciones</span>
                 </button>
 
-                <button class="px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-emerald-300 hover:text-emerald-700 transition-colors">
+                <button @click="setCategory('routines')"
+                    :class="category === 'routines' ? activeFilter : inactiveFilter">
                     <span x-show="lang === 'en'">Routines</span>
                     <span x-show="lang === 'es'">Rutinas</span>
                 </button>
+
             </div>
         </section>
 
         <!-- BLOG GRID -->
         <section class="grid md:grid-cols-3 gap-6 fade">
 
-            <!-- POST 1 -->
-            <article class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm flex flex-col">
-                <p class="text-[11px] uppercase tracking-[0.16em] text-emerald-600 mb-2" x-show="lang === 'en'">Stress & Overload</p>
-                <p class="text-[11px] uppercase tracking-[0.16em] text-emerald-600 mb-2" x-show="lang === 'es'">Estrés y Sobrecarga</p>
+            <template x-for="post in paginatedPosts" :key="post.slug">
+                <article class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm flex flex-col">
 
-                <h3 class="text-lg font-semibold text-slate-900 mb-2" x-show="lang === 'en'">5 Signs You’re Emotionally Overloaded</h3>
-                <h3 class="text-lg font-semibold text-slate-900 mb-2" x-show="lang === 'es'">5 Señales de que Estás Emocionalmente Sobrecargado</h3>
+                    <!-- Thumbnail -->
+                    <img :src="post.thumb"
+                         :alt="post.alt"
+                         class="w-full h-auto rounded-xl mb-4 thumb-shadow">
 
-                <p class="text-sm text-slate-600 mb-4" x-show="lang === 'en'">
-                    How to notice the quiet ways your body and mind ask for a pause.
-                </p>
-                <p class="text-sm text-slate-600 mb-4" x-show="lang === 'es'">
-                    Cómo notar las formas silenciosas en que tu cuerpo y tu mente piden una pausa.
-                </p>
+                    <!-- Category -->
+                    <p class="text-[11px] uppercase tracking-[0.16em] text-emerald-600 mb-2"
+                       x-text="lang === 'en' ? post.category_en : post.category_es"></p>
 
-                <a href="/blog/emotional-overload" class="mt-auto text-xs font-semibold text-emerald-700 hover:text-emerald-800">
-                    <span x-show="lang === 'en'">Read article →</span>
-                    <span x-show="lang === 'es'">Leer artículo →</span>
-                </a>
-            </article>
+                    <!-- Title -->
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2"
+                        x-text="lang === 'en' ? post.title_en : post.title_es"></h3>
 
-            <!-- POST 2 -->
-            <article class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm flex flex-col">
-                <p class="text-[11px] uppercase tracking-[0.16em] text-emerald-600 mb-2" x-show="lang === 'en'">Affirmations</p>
-                <p class="text-[11px] uppercase tracking-[0.16em] text-emerald-600 mb-2" x-show="lang === 'es'">Afirmaciones</p>
+                    <!-- Excerpt -->
+                    <p class="text-sm text-slate-600 mb-4"
+                       x-text="lang === 'en' ? post.excerpt_en : post.excerpt_es"></p>
 
-                <h3 class="text-lg font-semibold text-slate-900 mb-2" x-show="lang === 'en'">Daily Affirmations for Gen X</h3>
-                <h3 class="text-lg font-semibold text-slate-900 mb-2" x-show="lang === 'es'">Afirmaciones Diarias para la Generación X</h3>
-
-                <p class="text-sm text-slate-600 mb-4" x-show="lang === 'en'">
-                    Bilingual phrases to remind you that you’re not behind, broken, or too late.
-                </p>
-                <p class="text-sm text-slate-600 mb-4" x-show="lang === 'es'">
-                    Frases bilingües para recordarte que no estás atrasado, roto ni fuera de tiempo.
-                </p>
-
-                <a href="/blog/genx-affirmations" class="mt-auto text-xs font-semibold text-emerald-700 hover:text-emerald-800">
-                    <span x-show="lang === 'en'">Read article →</span>
-                    <span x-show="lang === 'es'">Leer artículo →</span>
-                </a>
-            </article>
-
-            <!-- POST 3 -->
-            <article class="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm flex flex-col">
-                <p class="text-[11px] uppercase tracking-[0.16em] text-emerald-600 mb-2" x-show="lang === 'en'">Routines</p>
-                <p class="text-[11px] uppercase tracking-[0.16em] text-emerald-600 mb-2" x-show="lang === 'es'">Rutinas</p>
-
-                <h3 class="text-lg font-semibold text-slate-900 mb-2" x-show="lang === 'en'">A 10‑Minute Calm Morning</h3>
-                <h3 class="text-lg font-semibold text-slate-900 mb-2" x-show="lang === 'es'">Una Mañana de Calma en 10 Minutos</h3>
-
-                <p class="text-sm text-slate-600 mb-4" x-show="lang === 'en'">
-                    A simple, bilingual routine you can actually stick to — even on busy days.
-                </p>
-                <p class="text-sm text-slate-600 mb-4" x-show="lang === 'es'">
-                    Una rutina sencilla y bilingüe que realmente puedes mantener, incluso en días ocupados.
-                </p>
-
-                <a href="/blog/calm-morning" class="mt-auto text-xs font-semibold text-emerald-700 hover:text-emerald-800">
-                    <span x-show="lang === 'en'">Read article →</span>
-                    <span x-show="lang === 'es'">Leer artículo →</span>
-                </a>
-            </article>
+                    <!-- Link -->
+                    <a :href="post.url"
+                       class="mt-auto text-xs font-semibold text-emerald-700 hover:text-emerald-800">
+                        <span x-show="lang === 'en'">Read article →</span>
+                        <span x-show="lang === 'es'">Leer artículo →</span>
+                    </a>
+                </article>
+            </template>
 
         </section>
 
-        <!-- PAGINATION (future-ready) -->
+        <!-- PAGINATION -->
         <section class="fade">
             <div class="flex justify-center gap-3 mt-10">
-                <button class="px-4 py-2 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-600 hover:border-emerald-300 hover:text-emerald-700 transition-colors">
-                    1
-                </button>
-                <button class="px-4 py-2 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-600 hover:border-emerald-300 hover:text-emerald-700 transition-colors">
-                    2
-                </button>
-                <button class="px-4 py-2 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-600 hover:border-emerald-300 hover:text-emerald-700 transition-colors">
-                    →
-                </button>
+
+                <template x-for="pageNum in totalPages" :key="pageNum">
+                    <button 
+                        @click="goToPage(pageNum)"
+                        :class="page === pageNum ? activePage : inactivePage"
+                        x-text="pageNum">
+                    </button>
+                </template>
+
             </div>
         </section>
 
@@ -183,6 +166,113 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        function blogPage() {
+            return {
+
+                /* LANGUAGE */
+                lang: 'en',
+                toggleLang() {
+                    this.lang = this.lang === 'en' ? 'es' : 'en';
+                },
+
+                /* FILTERS */
+                category: new URLSearchParams(window.location.search).get('category') || 'all',
+                search: new URLSearchParams(window.location.search).get('search') || '',
+
+                /* PAGINATION */
+                page: parseInt(new URLSearchParams(window.location.search).get('page')) || 1,
+                perPage: 3,
+
+                /* FILTER BUTTON STYLES */
+                activeFilter: "px-4 py-2 rounded-full text-xs font-semibold bg-emerald-700 text-white",
+                inactiveFilter: "px-4 py-2 rounded-full text-xs font-semibold bg-white border border-slate-200 text-slate-600 hover:border-emerald-300 hover:text-emerald-700",
+
+                activePage: "px-4 py-2 rounded-full bg-emerald-700 text-white text-xs font-semibold",
+                inactivePage: "px-4 py-2 rounded-full bg-white border border-slate-200 text-xs font-semibold text-slate-600 hover:border-emerald-300 hover:text-emerald-700",
+
+                /* ARTICLE DATA */
+                posts: [
+                    {
+                        slug: "emotional-overload",
+                        url: "/blog/emotional-overload",
+                        thumb: "/assets/images/blog/emotional-overload-thumb.png",
+                        alt: "Soft pastel shoreline with gentle waves.",
+                        category: "stress",
+                        category_en: "Stress & Overload",
+                        category_es: "Estrés y Sobrecarga",
+                        title_en: "5 Signs You’re Emotionally Overloaded",
+                        title_es: "5 Señales de que Estás Emocionalmente Sobrecargado",
+                        excerpt_en: "Learn the subtle signs that your emotional capacity is maxed out — and how to gently reset.",
+                        excerpt_es: "Aprende a notar las señales de que tu capacidad emocional llegó al límite — y cómo suavizarlo."
+                    },
+                    {
+                        slug: "genx-affirmations",
+                        url: "/blog/genx-affirmations",
+                        thumb: "/assets/images/blog/genx-affirmations-thumb.png",
+                        alt: "Bright midday shoreline with turquoise water.",
+                        category: "affirmations",
+                        category_en: "Affirmations",
+                        category_es: "Afirmaciones",
+                        title_en: "15 Affirmations Every Gen Xer Needs Today",
+                        title_es: "15 Afirmaciones que Todo Gen X Necesita Hoy",
+                        excerpt_en: "Gentle reminders for the generation that carries everything and rarely asks for help.",
+                        excerpt_es: "Recordatorios suaves para la generación que carga con todo y casi nunca pide ayuda."
+                    },
+                    {
+                        slug: "calm-morning",
+                        url: "/blog/calm-morning",
+                        thumb: "/assets/images/blog/calm-morning-thumb.png",
+                        alt: "Wide horizon shoreline with open sky.",
+                        category: "routines",
+                        category_en: "Routines",
+                        category_es: "Rutinas",
+                        title_en: "How to Create a Calm Morning (Even If Your Life Is Busy)",
+                        title_es: "Cómo Crear una Mañana en Calma (Aunque Tu Vida Sea Ocupada)",
+                        excerpt_en: "A gentle, realistic approach to starting your day with clarity — no perfection, no pressure.",
+                        excerpt_es: "Un enfoque suave y realista para comenzar tu día con claridad — sin perfección ni presión."
+                    }
+                ],
+
+                /* COMPUTED: FILTERED POSTS */
+                get filteredPosts() {
+                    return this.posts.filter(post => {
+                        const matchesCategory = this.category === 'all' || post.category === this.category;
+                        const matchesSearch = post.title_en.toLowerCase().includes(this.search.toLowerCase()) ||
+                                             post.title_es.toLowerCase().includes(this.search.toLowerCase()) ||
+                                             post.excerpt_en.toLowerCase().includes(this.search.toLowerCase()) ||
+                                             post.excerpt_es.toLowerCase().includes(this.search.toLowerCase());
+                        return matchesCategory && matchesSearch;
+                    });
+                },
+
+                /* PAGINATION LOGIC */
+                get totalPages() {
+                    return Math.ceil(this.filteredPosts.length / this.perPage);
+                },
+
+                get paginatedPosts() {
+                    const start = (this.page - 1) * this.perPage;
+                    return this.filteredPosts.slice(start, start + this.perPage);
+                },
+
+                goToPage(num) {
+                    this.page = num;
+                    const params = new URLSearchParams(window.location.search);
+                    params.set('page', num);
+                    window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
+                },
+
+                setCategory(cat) {
+                    this.category = cat;
+                    this.page = 1;
+                    const params = new URLSearchParams(window.location.search);
+                    params.set('category', cat);
+                    params.set('page', 1);
+                    window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
+                }
+            }
+        }
     </script>
 
 </body>
