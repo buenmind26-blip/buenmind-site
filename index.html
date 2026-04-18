@@ -34,6 +34,15 @@
         .section-fade { animation: fadeIn 1.2s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
     </style>
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2263466');
+</script>
+<!-- End MailerLite Universal -->
 </head>
 <body class="text-slate-800 antialiased">
 
@@ -336,50 +345,31 @@
                 </a>
             </div>
         </section>
-
         <!-- Email Capture -->
-        <section id="email" class="section-fade">
-            <div class="bg-slate-900 rounded-[2rem] px-6 py-9 md:px-10 md:py-10 text-slate-50 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-                <div class="max-w-md">
-                    <h2 class="text-2xl font-semibold mb-2">
-                        <span x-show="lang === 'en'">Join the BuenMind Calm Circle</span>
-                        <span x-show="lang === 'es'">Únete al Círculo de Calma de BuenMind</span>
-                    </h2>
-                    <p class="text-sm text-slate-200 mb-3" x-show="lang === 'en'">
-                        Get a free 7‑day calm reset, weekly bilingual affirmations, and early access to new tools.
-                    </p>
-                    <p class="text-sm text-slate-200 mb-3" x-show="lang === 'es'">
-                        Recibe un reset de calma de 7 días, afirmaciones bilingües semanales y acceso anticipado a nuevas herramientas.
-                    </p>
-                    <p class="text-[11px] text-slate-400" x-show="lang === 'en'">You can unsubscribe anytime. No pressure, just support.</p>
-                    <p class="text-[11px] text-slate-400" x-show="lang === 'es'">Puedes darte de baja cuando quieras. Sin presión, solo apoyo.</p>
-                </div>
+		<section id="email" class="bg-white py-24 sm:py-32">
+		  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+			<div class="mx-auto max-w-2xl text-center">
 
-                <!-- Replace this with your email provider form embed -->
-                <form class="w-full max-w-sm">
-                    <label class="block mb-2 text-xs font-semibold tracking-[0.16em] uppercase text-slate-300">
-                        <span x-show="lang === 'en'">Email Address</span>
-                        <span x-show="lang === 'es'">Correo Electrónico</span>
-                    </label>
-                    <div class="flex flex-col sm:flex-row gap-3">
-                        <input
-                            type="email"
-                            required
-                            class="flex-1 px-4 py-2.5 rounded-full text-sm text-slate-900 border border-slate-600 bg-slate-950/40 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500"
-                            placeholder="you@example.com"
-                        >
-                        <button
-                            type="submit"
-                            class="px-5 py-2.5 rounded-full bg-emerald-500 text-slate-950 text-sm font-semibold hover:bg-emerald-400 transition-colors"
-                        >
-                            <span x-show="lang === 'en'">Get the 7‑Day Reset</span>
-                            <span x-show="lang === 'es'">Recibir el Reset de 7 Días</span>
-                        </button>
-                    </div>
-                </form>
-            </div>
-        </section>
+			  <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+				Join the BuenMind Calm Circle
+			  </h2>
 
+			  <p class="mt-4 text-lg leading-8 text-gray-600">
+				Get your free 7‑day calm reset.
+				<br>
+				Únete al Círculo de Calma de BuenMind y recibe tu reset de 7 días.
+			  </p>
+
+			  <!-- Styled MailerLite Container -->
+			  <div class="mt-10 flex justify-center">
+				<div class="w-full max-w-md rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+				  <div class="ml-embedded" data-form="0nRMVC"></div>
+				</div>
+			  </div>
+
+			</div>
+		  </div>
+		</section>
         <!-- Connect / Social -->
         <section id="connect" class="text-center section-fade">
             <h2 class="text-xl md:text-2xl font-semibold mb-3">
