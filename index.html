@@ -6,19 +6,29 @@
   <link rel="icon" type="image/png" href="WebsiteFaveicon.png">
   <title>BuenMind - Modern Mental Wellness for Gen X</title>
 
+  <!-- SEO Meta -->
   <meta name="description" content="BuenMind is a bilingual mental wellness space for Gen X. Calm tools, affirmations, and gentle guidance in English + Español.">
   <meta name="keywords" content="mental wellness, Gen X, affirmations, bilingual, Spanish, English, stress relief, calm, BuenMind">
   <meta name="author" content="BuenMind">
 
+  <!-- Open Graph -->
   <meta property="og:title" content="BuenMind - Modern Mental Wellness">
   <meta property="og:description" content="Clarity, calm, and growth for your everyday life. Bilingual tools in English + Español.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://buenmind.com/">
   <meta property="og:image" content="https://buenmind.com/og-image.png">
 
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BuenMind - Modern Mental Wellness">
+  <meta name="twitter:description" content="Clarity, calm, and growth for your everyday life. Bilingual tools in English + Español.">
+  <meta name="twitter:image" content="https://buenmind.com/og-image.png">
+
+  <!-- Tailwind + Alpine -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+  <!-- Fonts -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
     body {
@@ -32,21 +42,9 @@
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    /* MailerLite Style Fixes from Embed Code */
-    .ml-form-embedSubmitLoad {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-    }
-    .g-recaptcha {
-      transform: scale(1);
-      -webkit-transform: scale(1);
-      transform-origin: 0 0;
-      -webkit-transform-origin: 0 0;
-    }
   </style>
 
+  <!-- MailerLite Universal -->
   <script>
     (function(w,d,e,u,f,l,n){
       w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments)};
@@ -55,14 +53,17 @@
     })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
     ml('account', '2263466');
   </script>
+  <!-- End MailerLite Universal -->
 </head>
 <body class="text-slate-800 antialiased">
 
+    <!-- Top Bar -->
     <div class="bg-emerald-50 border-b border-emerald-100 text-center text-xs md:text-sm py-2 px-4">
         <p x-show="lang === 'en'">Bilingual calm for modern minds. New products and tools are coming soon.</p>
         <p x-show="lang === 'es'">Calma bilingüe para la vida moderna. Nuevos productos y herramientas llegan pronto.</p>
     </div>
 
+    <!-- Nav -->
     <nav class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
         <div class="flex items-center gap-3">
             <img src="BM_MainHeaderLogo.png" alt="BuenMind Logo" class="h-12 md:h-16 w-auto">
@@ -91,6 +92,7 @@
         </div>
     </nav>
 
+    <!-- Hero -->
     <header class="max-w-6xl mx-auto px-6 pt-6 pb-14 md:pb-20 section-fade">
         <div class="grid md:grid-cols-2 gap-10 items-center">
             <div>
@@ -121,6 +123,11 @@
                         <span x-show="lang === 'es'">Explora Próximas Herramientas</span>
                     </a>
                 </div>
+
+                <p class="text-xs text-slate-400">
+                    <span x-show="lang === 'en'">No spam. Just calm, bilingual support for your everyday life.</span>
+                    <span x-show="lang === 'es'">Sin spam. Solo apoyo bilingüe y calmado para tu vida diaria.</span>
+                </p>
             </div>
 
             <div class="bg-emerald-50 rounded-[2rem] p-7 md:p-9 border border-emerald-100 shadow-sm">
@@ -131,13 +138,28 @@
                     </p>
                     <span class="text-3xl">🌱</span>
                 </div>
+                <p class="text-xs text-slate-400 mb-2" x-show="lang === 'en'">A glimpse into our 30‑day journey toward clarity and self‑belief.</p>
+                <p class="text-xs text-slate-400 mb-2" x-show="lang === 'es'">Una muestra de nuestro camino de 30 días hacia la claridad y la confianza en uno mismo.</p>
+
                 <div class="space-y-4 mt-4">
                     <div class="bg-white rounded-2xl p-4 border border-slate-100">
                         <p class="text-[10px] font-bold text-emerald-600 mb-1" x-text="lang === 'en' ? 'DAY 01' : 'DÍA 01'"></p>
+                        <p class="text-[11px] text-slate-400 italic mb-1" x-show="lang === 'en'">“If you doubt your worth today...”</p>
+                        <p class="text-[11px] text-slate-400 italic mb-1" x-show="lang === 'es'">“¿Dudas de tu valor?”</p>
                         <p class="text-sm font-semibold text-slate-900 mb-1" x-show="lang === 'en'">I am worthy of deep love.</p>
                         <p class="text-sm font-semibold text-slate-900 mb-1 uppercase" x-show="lang === 'es'">SOY MERECEDOR DE AMOR PROFUNDO.</p>
                         <p class="text-[11px] text-slate-500" x-show="lang === 'en'">I don’t have to earn it. I deserve tenderness exactly as I am.</p>
                         <p class="text-[11px] text-slate-500" x-show="lang === 'es'">No lo gano, lo merezco exactamente como soy.</p>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-4 border border-slate-100">
+                        <p class="text-[10px] font-bold text-emerald-600 mb-1" x-text="lang === 'en' ? 'DAY 06' : 'DÍA 06'"></p>
+                        <p class="text-[11px] text-slate-400 italic mb-1" x-show="lang === 'en'">“For anyone going through a lot...”</p>
+                        <p class="text-[11px] text-slate-400 italic mb-1" x-show="lang === 'es'">“Para quien pasa por mucho.”</p>
+                        <p class="text-sm font-semibold text-slate-900 mb-1" x-show="lang === 'en'">I am resilient, bending without breaking.</p>
+                        <p class="text-sm font-semibold text-slate-900 mb-1 uppercase" x-show="lang === 'es'">SOY RESILIENTE.</p>
+                        <p class="text-[11px] text-slate-500" x-show="lang === 'en'">Life can sway me but it will not destroy me. I stand tall.</p>
+                        <p class="text-[11px] text-slate-500" x-show="lang === 'es'">Me doblo, no me rompo. Me mantengo firme.</p>
                     </div>
                 </div>
             </div>
@@ -145,43 +167,253 @@
     </header>
 
     <main class="max-w-6xl mx-auto px-6 pb-20 space-y-20">
-        <section id="email" class="bg-white py-12 sm:py-20 border-y border-slate-50">
-          <div class="mx-auto max-w-7xl px-6 lg:px-8">
-            <div class="mx-auto max-w-2xl text-center">
-              <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                <span x-show="lang === 'en'">Join the BuenMind Calm Circle</span>
-                <span x-show="lang === 'es'">Únete al Círculo de Calma de BuenMind</span>
-              </h2>
-              <p class="mt-4 text-lg leading-8 text-gray-600">
-                <span x-show="lang === 'en'">Get your free 7-day calm reset.</span>
-                <span x-show="lang === 'es'">Recibe tu reset de 7 días gratuito.</span>
-              </p>
 
-              <div class="mt-10 flex justify-center">
-                <div class="w-full max-w-md">
-                   <div class="ml-embedded" data-form="0nRMVC"></div>
-                </div>
-              </div>
+        <!-- Why BuenMind -->
+        <section id="why" class="grid md:grid-cols-2 gap-10 items-center section-fade">
+            <div>
+                <h2 class="text-2xl md:text-3xl font-semibold text-slate-900 mb-4">
+                    <span x-show="lang === 'en'">Why BuenMind Exists</span>
+                    <span x-show="lang === 'es'">Por Qué Existe BuenMind</span>
+                </h2>
+                <p class="leading-relaxed text-slate-600 mb-4" x-show="lang === 'en'">
+                    BuenMind was created as a gentle, stigma‑free space for people who want to feel more grounded, confident, and emotionally steady—without needing to “fix” themselves overnight.
+                </p>
+                <p class="leading-relaxed text-slate-600 mb-4" x-show="lang === 'es'">
+                    BuenMind nació como un espacio amable y libre de estigma para quienes desean sentirse más centrados, seguros y emocionalmente estables, sin tener que “arreglarse” de la noche a la mañana.
+                </p>
+                <p class="leading-relaxed text-slate-600" x-show="lang === 'en'">
+                    We honor the reality of moving between languages, cultures, and roles. Here, your inner world is taken seriously—with warmth, not pressure.
+                </p>
+                <p class="leading-relaxed text-slate-600" x-show="lang === 'es'">
+                    Honramos la realidad de moverse entre idiomas, culturas y roles. Aquí, tu mundo interno se toma en serio, con calidez y sin presión.
+                </p>
             </div>
-          </div>
+            <div class="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm border border-slate-100">
+                <h3 class="text-lg font-semibold text-slate-900 mb-3" x-show="lang === 'en'">A bilingual space for real humans.</h3>
+                <h3 class="text-lg font-semibold text-slate-900 mb-3" x-show="lang === 'es'">Un espacio bilingüe para humanos reales.</h3>
+                <p class="text-sm text-slate-600 mb-3" x-show="lang === 'en'">
+                    English + Español, side by side. You don’t have to choose one language to feel understood.
+                </p>
+                <p class="text-sm text-slate-600 mb-3" x-show="lang === 'es'">
+                    Inglés + Español, lado a lado. No tienes que elegir un solo idioma para sentirte comprendido.
+                </p>
+                <p class="text-sm text-slate-600" x-show="lang === 'en'">
+                    Whether you’re just beginning your wellness journey or deepening it, you’re welcome here.
+                </p>
+                <p class="text-sm text-slate-600" x-show="lang === 'es'">
+                    Estés comenzando tu camino de bienestar o profundizando en él, aquí eres bienvenido.
+                </p>
+            </div>
         </section>
 
-        <section id="connect" class="text-center section-fade mt-10">
+        <!-- Products / Tools Preview -->
+        <section id="products" class="bg-emerald-50/40 rounded-[2.5rem] border border-emerald-100/60 shadow-sm px-6 py-10 md:px-10 md:py-12 section-fade">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-2">
+                    <span x-show="lang === 'en'">Tools & Products Coming Soon</span>
+                    <span x-show="lang === 'es'">Herramientas y Productos Próximamente</span>
+                </h2>
+                <p class="text-sm md:text-base text-slate-600 max-w-2xl mx-auto" x-show="lang === 'en'">
+                    We’re building calm‑first tools you can use at home, at work, or in between—digital and physical.
+                </p>
+                <p class="text-sm md:text-base text-slate-600 max-w-2xl mx-auto" x-show="lang === 'es'">
+                    Estamos creando herramientas centradas en la calma que puedes usar en casa, en el trabajo o entre medio—digitales y físicas.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-100 flex flex-col">
+                    <p class="text-[11px] font-semibold text-emerald-600 mb-2 uppercase" x-show="lang === 'en'">Digital • Coming Soon</p>
+                    <p class="text-[11px] font-semibold text-emerald-600 mb-2 uppercase" x-show="lang === 'es'">Digital • Próximamente</p>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2" x-show="lang === 'en'">30‑Day Calm & Clarity Journal</h3>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2" x-show="lang === 'es'">Diario de 30 Días de Calma y Claridad</h3>
+                    <p class="text-sm text-slate-600 mb-4" x-show="lang === 'en'">
+                        A guided, bilingual journal to help you release mental noise and reconnect with what matters.
+                    </p>
+                    <p class="text-sm text-slate-600 mb-4" x-show="lang === 'es'">
+                        Un diario guiado y bilingüe para ayudarte a soltar el ruido mental y reconectar con lo que importa.
+                    </p>
+                    <p class="text-xs text-slate-400 mt-auto" x-show="lang === 'en'">Available soon on BuenMind.com, Amazon, and TikTok Shop.</p>
+                    <p class="text-xs text-slate-400 mt-auto" x-show="lang === 'es'">Disponible pronto en BuenMind.com, Amazon y TikTok Shop.</p>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-100 flex flex-col">
+                    <p class="text-[11px] font-semibold text-emerald-600 mb-2 uppercase" x-show="lang === 'en'">Cards • Coming Soon</p>
+                    <p class="text-[11px] font-semibold text-emerald-600 mb-2 uppercase" x-show="lang === 'es'">Cartas • Próximamente</p>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2" x-show="lang === 'en'">Bilingual Affirmation Deck</h3>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2" x-show="lang === 'es'">Baraja de Afirmaciones Bilingüe</h3>
+                    <p class="text-sm text-slate-600 mb-4" x-show="lang === 'en'">
+                        40 cards in English + Español designed to ground you in moments of doubt, stress, or self‑criticism.
+                    </p>
+                    <p class="text-sm text-slate-600 mb-4" x-show="lang === 'es'">
+                        40 cartas en inglés + español diseñadas para ayudarte a aterrizar en momentos de duda, estrés o autocrítica.
+                    </p>
+                    <p class="text-xs text-slate-400 mt-auto" x-show="lang === 'en'">Perfect for your desk, nightstand, or morning ritual.</p>
+                    <p class="text-xs text-slate-400 mt-auto" x-show="lang === 'es'">Perfectas para tu escritorio, mesa de noche o ritual matutino.</p>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-100 flex flex-col">
+                    <p class="text-[11px] font-semibold text-emerald-600 mb-2 uppercase" x-show="lang === 'en'">Mini Course • Coming Soon</p>
+                    <p class="text-[11px] font-semibold text-emerald-600 mb-2 uppercase" x-show="lang === 'es'">Mini Curso • Próximamente</p>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2" x-show="lang === 'en'">Calm for Overloaded Minds</h3>
+                    <h3 class="text-lg font-semibold text-slate-900 mb-2" x-show="lang === 'es'">Calma para Mentes Sobrecargadas</h3>
+                    <p class="text-sm text-slate-600 mb-4" x-show="lang === 'en'">
+                        Short, practical lessons to help you reset your nervous system and create small, sustainable shifts.
+                    </p>
+                    <p class="text-sm text-slate-600 mb-4" x-show="lang === 'es'">
+                        Lecciones cortas y prácticas para ayudarte a resetear tu sistema nervioso y crear cambios pequeños y sostenibles.
+                    </p>
+                    <p class="text-xs text-slate-400 mt-auto" x-show="lang === 'en'">Delivered in both languages so you can learn in the one that feels right that day.</p>
+                    <p class="text-xs text-slate-400 mt-auto" x-show="lang === 'es'">Disponible en ambos idiomas para que aprendas en el que se sienta correcto ese día.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog / Calm Library Preview -->
+        <section id="blog" class="section-fade">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-semibold text-slate-900 mb-1">
+                        <span x-show="lang === 'en'">The Calm Library</span>
+                        <span x-show="lang === 'es'">La Biblioteca de Calma</span>
+                    </h2>
+                    <p class="text-sm text-slate-600" x-show="lang === 'en'">
+                        Short, honest reflections and tools for Gen X minds navigating stress, burnout, and self‑doubt.
+                    </p>
+                    <p class="text-sm text-slate-600" x-show="lang === 'es'">
+                        Reflexiones y herramientas breves y honestas para mentes de la Generación X que navegan estrés, burnout y duda interna.
+                    </p>
+                </div>
+                <a href="/blog" class="hidden md:inline-flex text-xs font-semibold text-emerald-700 hover:text-emerald-800">
+                    <span x-show="lang === 'en'">View all articles →</span>
+                    <span x-show="lang === 'es'">Ver todos los artículos →</span>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Post 1 -->
+                <article class="bg-white rounded-2xl p-5 border border-slate-100 flex flex-col">
+                    <p class="text-[11px] uppercase tracking-[0.16em] text-emerald-600 mb-2" x-show="lang === 'en'">Stress & Overload</p>
+                    <p class="text-[11px] uppercase tracking-[0.16em] text-emerald-600 mb-2" x-show="lang === 'es'">Estrés y Sobrecarga</p>
+                    <h3 class="text-base font-semibold text-slate-900 mb-2" x-show="lang === 'en'">5 Signs You’re Emotionally Overloaded</h3>
+                    <h3 class="text-base font-semibold text-slate-900 mb-2" x-show="lang === 'es'">5 Señales de que Estás Emocionalmente Sobrecargado</h3>
+                    <p class="text-sm text-slate-600 mb-4" x-show="lang === 'en'">
+                        How to notice the quiet ways your body and mind ask for a pause.
+                    </p>
+                    <p class="text-sm text-slate-600 mb-4" x-show="lang === 'es'">
+                        Cómo notar las formas silenciosas en que tu cuerpo y tu mente piden una pausa.
+                    </p>
+                    <a href="/blog/emotional-overload" class="mt-auto text-xs font-semibold text-emerald-700 hover:text-emerald-800">
+                        <span x-show="lang === 'en'">Read article →</span>
+                        <span x-show="lang === 'es'">Leer artículo →</span>
+                    </a>
+                </article>
+
+                <!-- Post 2 -->
+                <article class="bg-white rounded-2xl p-5 border border-slate-100 flex flex-col">
+                    <p class="text-[11px] uppercase tracking-[0.16em] text-emerald-600 mb-2" x-show="lang === 'en'">Affirmations</p>
+                    <p class="text-[11px] uppercase tracking-[0.16em] text-emerald-600 mb-2" x-show="lang === 'es'">Afirmaciones</p>
+                    <h3 class="text-base font-semibold text-slate-900 mb-2" x-show="lang === 'en'">Daily Affirmations for Gen X</h3>
+                    <h3 class="text-base font-semibold text-slate-900 mb-2" x-show="lang === 'es'">Afirmaciones Diarias para la Generación X</h3>
+                    <p class="text-sm text-slate-600 mb-4" x-show="lang === 'en'">
+                        Bilingual phrases to remind you that you’re not behind, broken, or too late.
+                    </p>
+                    <p class="text-sm text-slate-600 mb-4" x-show="lang === 'es'">
+                        Frases bilingües para recordarte que no estás atrasado, roto ni fuera de tiempo.
+                    </p>
+                    <a href="/blog/genx-affirmations" class="mt-auto text-xs font-semibold text-emerald-700 hover:text-emerald-800">
+                        <span x-show="lang === 'en'">Read article →</span>
+                        <span x-show="lang === 'es'">Leer artículo →</span>
+                    </a>
+                </article>
+
+                <!-- Post 3 -->
+                <article class="bg-white rounded-2xl p-5 border border-slate-100 flex flex-col">
+                    <p class="text-[11px] uppercase tracking-[0.16em] text-emerald-600 mb-2" x-show="lang === 'en'">Routines</p>
+                    <p class="text-[11px] uppercase tracking-[0.16em] text-emerald-600 mb-2" x-show="lang === 'es'">Rutinas</p>
+                    <h3 class="text-base font-semibold text-slate-900 mb-2" x-show="lang === 'en'">A 10‑Minute Calm Morning</h3>
+                    <h3 class="text-base font-semibold text-slate-900 mb-2" x-show="lang === 'es'">Una Mañana de Calma en 10 Minutos</h3>
+                    <p class="text-sm text-slate-600 mb-4" x-show="lang === 'en'">
+                        A simple, bilingual routine you can actually stick to—even on busy days.
+                    </p>
+                    <p class="text-sm text-slate-600 mb-4" x-show="lang === 'es'">
+                        Una rutina sencilla y bilingüe que realmente puedes mantener, incluso en días ocupados.
+                    </p>
+                    <a href="/blog/calm-morning" class="mt-auto text-xs font-semibold text-emerald-700 hover:text-emerald-800">
+                        <span x-show="lang === 'en'">Read article →</span>
+                        <span x-show="lang === 'es'">Leer artículo →</span>
+                    </a>
+                </article>
+            </div>
+
+            <div class="mt-4 md:hidden">
+                <a href="/blog" class="text-xs font-semibold text-emerald-700 hover:text-emerald-800">
+                    <span x-show="lang === 'en'">View all articles →</span>
+                    <span x-show="lang === 'es'">Ver todos los artículos →</span>
+                </a>
+            </div>
+        </section>
+        <!-- Email Capture -->
+<section id="email" class="bg-white py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center">
+
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <span x-show="lang === 'en'">Join the BuenMind Calm Circle</span>
+        <span x-show="lang === 'es'">Únete al Círculo de Calma de BuenMind</span>
+      </h2>
+
+      <p class="mt-4 text-lg leading-8 text-gray-600">
+        <span x-show="lang === 'en'">Get your free 7‑day calm reset.</span>
+        <span x-show="lang === 'es'">Recibe tu reset de 7 días gratuito.</span>
+      </p>
+
+      <div class="mt-10 flex justify-center">
+        <div class="w-full max-w-md">
+          <div class="ml-embedded" data-form="0nRMVC"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+        <!-- Connect / Social -->
+        <section id="connect" class="text-center section-fade">
             <h2 class="text-xl md:text-2xl font-semibold mb-3">
                 <span x-show="lang === 'en'">Stay Connected with BuenMind</span>
                 <span x-show="lang === 'es'">Mantente Conectado con BuenMind</span>
             </h2>
-            <div class="flex justify-center gap-6 text-xs md:text-sm font-bold tracking-tight text-slate-400 mt-6">
+            <p class="text-sm text-slate-600 mb-5" x-show="lang === 'en'">
+                Follow along for daily calm check‑ins, affirmations, and real‑talk about emotional wellness.
+            </p>
+            <p class="text-sm text-slate-600 mb-5" x-show="lang === 'es'">
+                Acompáñanos para chequeos diarios de calma, afirmaciones y conversaciones reales sobre bienestar emocional.
+            </p>
+
+            <a href="mailto:info@buenmind.com" class="block text-emerald-700 font-semibold text-sm md:text-base hover:underline mb-4">
+                info@buenmind.com
+            </a>
+
+            <div class="flex justify-center gap-6 text-xs md:text-sm font-bold tracking-tight text-slate-400">
                 <a href="https://instagram.com/BuenMind" class="hover:text-pink-500 transition-colors">INSTAGRAM</a>
                 <a href="https://tiktok.com/@BuenMind" class="hover:text-black transition-colors">TIKTOK</a>
                 <a href="https://youtube.com/@buenmind" class="hover:text-red-500 transition-colors">YOUTUBE</a>
+                <a href="https://facebook.com/profile.php?id=61574314602751" class="hover:text-blue-600 transition-colors">FACEBOOK</a>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="border-t border-slate-100 py-6 mt-4">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
             <p>© <span id="year"></span> BuenMind. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="/privacy" class="hover:text-emerald-700">Privacy</a>
+                <a href="/terms" class="hover:text-emerald-700">Terms</a>
+            </div>
         </div>
     </footer>
 
