@@ -15,11 +15,54 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
+    <!-- Formspree Ajax -->
+    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    <script>
+      window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+      formspree('initForm', { formElement: '#contact-form', formId: 'xzdyvdqw' });
+    </script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfdfd; }
         .fade { animation: fadeIn 1.2s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Formspree success & error banners */
+        [data-fs-success] {
+            display: none;
+            background-color: #ecfdf5;
+            border: 1px solid #6ee7b7;
+            border-radius: 12px;
+            padding: 16px 20px;
+            text-align: center;
+            color: #065f46;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        [data-fs-error] {
+            display: none;
+            background-color: #fef2f2;
+            border: 1px solid #fca5a5;
+            border-radius: 12px;
+            padding: 16px 20px;
+            text-align: center;
+            color: #991b1b;
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+        /* Inline field-level errors */
+        span[data-fs-error] {
+            display: none;
+            background: none;
+            border: none;
+            padding: 0;
+            margin-top: 4px;
+            color: #dc2626;
+            font-size: 12px;
+            border-radius: 0;
+        }
     </style>
 </head>
 
@@ -53,7 +96,7 @@
         </h1>
 
         <p class="text-lg text-emerald-700 italic max-w-2xl mx-auto">
-            <span x-show="lang === 'en'">We’re here to support your calm, clarity, and emotional growth.</span>
+            <span x-show="lang === 'en'">We're here to support your calm, clarity, and emotional growth.</span>
             <span x-show="lang === 'es'">Estamos aquí para apoyar tu calma, claridad y crecimiento emocional.</span>
         </p>
 
@@ -73,8 +116,19 @@
                     <span x-show="lang === 'es'">Enviar un Mensaje</span>
                 </h2>
 
-                <!-- Replace with your form backend (Formspree, Netlify Forms, etc.) -->
-                <form class="space-y-6" action="https://formspree.io/f/xzdyvdqw" method="POST">
+                <!-- Success message — shown automatically after submit -->
+                <div data-fs-success>
+                    <span x-show="lang === 'en'">✅ Message sent! We'll get back to you soon.</span>
+                    <span x-show="lang === 'es'">✅ ¡Mensaje enviado! Te responderemos pronto.</span>
+                </div>
+
+                <!-- General error message -->
+                <div data-fs-error>
+                    <span x-show="lang === 'en'">Something went wrong. Please try again or email us directly at info@buenmind.com</span>
+                    <span x-show="lang === 'es'">Algo salió mal. Inténtalo de nuevo o escríbenos directamente a info@buenmind.com</span>
+                </div>
+
+                <form id="contact-form" class="space-y-6">
 
                     <!-- Name -->
                     <div>
@@ -82,9 +136,10 @@
                             <span x-show="lang === 'en'">Your Name</span>
                             <span x-show="lang === 'es'">Tu Nombre</span>
                         </label>
-                        <input type="text" required
+                        <input type="text" name="name" required data-fs-field
                                class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                                placeholder="John Doe">
+                        <span data-fs-error="name"></span>
                     </div>
 
                     <!-- Email -->
@@ -93,9 +148,10 @@
                             <span x-show="lang === 'en'">Email Address</span>
                             <span x-show="lang === 'es'">Correo Electrónico</span>
                         </label>
-                        <input type="email" required
+                        <input type="email" name="email" required data-fs-field
                                class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                                placeholder="you@example.com">
+                        <span data-fs-error="email"></span>
                     </div>
 
                     <!-- Message -->
@@ -104,14 +160,15 @@
                             <span x-show="lang === 'en'">Message</span>
                             <span x-show="lang === 'es'">Mensaje</span>
                         </label>
-                        <textarea rows="5" required
+                        <textarea rows="5" name="message" required data-fs-field
                                   class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
                                   placeholder="Write your message here..."></textarea>
+                        <span data-fs-error="message"></span>
                     </div>
 
                     <!-- Submit -->
-                    <button type="submit"
-                            class="w-full py-3 rounded-full bg-emerald-700 text-white text-sm font-semibold hover:bg-emerald-800 transition-colors">
+                    <button type="submit" data-fs-submit-btn
+                            class="w-full py-3 rounded-full bg-emerald-700 text-white text-sm font-semibold hover:bg-emerald-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                         <span x-show="lang === 'en'">Send Message</span>
                         <span x-show="lang === 'es'">Enviar Mensaje</span>
                     </button>
@@ -126,7 +183,6 @@
                 <span x-show="lang === 'en'">Prefer Email?</span>
                 <span x-show="lang === 'es'">¿Prefieres Correo?</span>
             </h2>
-
             <a href="mailto:info@buenmind.com" class="text-emerald-700 font-semibold hover:underline text-lg">
                 info@buenmind.com
             </a>
@@ -149,12 +205,12 @@
             <div class="flex justify-center gap-6 text-xs md:text-sm font-bold tracking-tight text-slate-400">
                 <a href="https://instagram.com/BuenMind" class="hover:text-pink-500 transition-colors">INSTAGRAM</a>
                 <a href="https://tiktok.com/@BuenMind" class="hover:text-black transition-colors">TIKTOK</a>
-                <a href="https://youtube.com" class="hover:text-red-500 transition-colors">YOUTUBE</a>
-                <a href="https://facebook.com" class="hover:text-blue-600 transition-colors">FACEBOOK</a>
+                <a href="https://youtube.com/@buenmind" class="hover:text-red-500 transition-colors">YOUTUBE</a>
+                <a href="https://facebook.com/profile.php?id=61574314602751" class="hover:text-blue-600 transition-colors">FACEBOOK</a>
             </div>
         </section>
 
-        <!-- FAQ SECTION (Optional but great for SEO) -->
+        <!-- FAQ -->
         <section class="fade max-w-3xl mx-auto">
             <h2 class="text-2xl font-semibold mb-6 text-center">
                 <span x-show="lang === 'en'">Frequently Asked Questions</span>
@@ -167,39 +223,24 @@
                 <div>
                     <h3 class="text-sm font-semibold text-slate-900 mb-1" x-show="lang === 'en'">Do you offer bilingual products?</h3>
                     <h3 class="text-sm font-semibold text-slate-900 mb-1" x-show="lang === 'es'">¿Ofrecen productos bilingües?</h3>
-
-                    <p class="text-sm text-slate-600" x-show="lang === 'en'">
-                        Yes — every BuenMind product is created in English + Español.
-                    </p>
-                    <p class="text-sm text-slate-600" x-show="lang === 'es'">
-                        Sí — cada producto de BuenMind se crea en inglés + español.
-                    </p>
+                    <p class="text-sm text-slate-600" x-show="lang === 'en'">Yes — every BuenMind product is created in English + Español.</p>
+                    <p class="text-sm text-slate-600" x-show="lang === 'es'">Sí — cada producto de BuenMind se crea en inglés + español.</p>
                 </div>
 
                 <!-- FAQ 2 -->
                 <div>
                     <h3 class="text-sm font-semibold text-slate-900 mb-1" x-show="lang === 'en'">Where will products be available?</h3>
                     <h3 class="text-sm font-semibold text-slate-900 mb-1" x-show="lang === 'es'">¿Dónde estarán disponibles los productos?</h3>
-
-                    <p class="text-sm text-slate-600" x-show="lang === 'en'">
-                        BuenMind products will be available on our website, Amazon, Walmart Marketplace, and TikTok Shop.
-                    </p>
-                    <p class="text-sm text-slate-600" x-show="lang === 'es'">
-                        Los productos de BuenMind estarán disponibles en nuestro sitio web, Amazon, Walmart Marketplace y TikTok Shop.
-                    </p>
+                    <p class="text-sm text-slate-600" x-show="lang === 'en'">BuenMind products will be available on our website, Amazon, Walmart Marketplace, and TikTok Shop.</p>
+                    <p class="text-sm text-slate-600" x-show="lang === 'es'">Los productos de BuenMind estarán disponibles en nuestro sitio web, Amazon, Walmart Marketplace y TikTok Shop.</p>
                 </div>
 
                 <!-- FAQ 3 -->
                 <div>
                     <h3 class="text-sm font-semibold text-slate-900 mb-1" x-show="lang === 'en'">How soon will new tools launch?</h3>
                     <h3 class="text-sm font-semibold text-slate-900 mb-1" x-show="lang === 'es'">¿Cuándo lanzarán nuevas herramientas?</h3>
-
-                    <p class="text-sm text-slate-600" x-show="lang === 'en'">
-                        New digital and physical tools are launching throughout 2026.
-                    </p>
-                    <p class="text-sm text-slate-600" x-show="lang === 'es'">
-                        Nuevas herramientas digitales y físicas se lanzarán durante el 2026.
-                    </p>
+                    <p class="text-sm text-slate-600" x-show="lang === 'en'">New digital and physical tools are launching throughout 2026.</p>
+                    <p class="text-sm text-slate-600" x-show="lang === 'es'">Nuevas herramientas digitales y físicas se lanzarán durante el 2026.</p>
                 </div>
 
             </div>
