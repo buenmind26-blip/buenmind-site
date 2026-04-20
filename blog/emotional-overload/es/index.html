@@ -1,108 +1,284 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" x-data="{ lang: 'es' }">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>5 Señales de que Estás Emocionalmente Sobrecargado | BuenMind</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" href="/WebsiteFaveicon.png">
+
+    <!-- SEO -->
     <meta name="description" content="Aprende a reconocer las señales de sobrecarga emocional y cómo aliviar el peso de manera suave y consciente.">
+    <meta name="keywords" content="sobrecarga emocional, estrés Gen X, bienestar mental, bilingüe, BuenMind">
+    <meta name="author" content="BuenMind">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="5 Señales de que Estás Emocionalmente Sobrecargado | BuenMind">
+    <meta property="og:description" content="Aprende a reconocer las señales de sobrecarga emocional y cómo aliviar el peso de manera suave.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://buenmind.com/blog/emotional-overload/es/">
+    <meta property="og:image" content="https://buenmind.com/assets/images/blog/emotional-overload-hero.png">
+
+    <!-- Tailwind + Alpine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- MailerLite Universal -->
+    <script>
+      (function(w,d,e,u,f,l,n){
+        w[f]=w[f]||function(){(w[f].q=w[f].q||[]).push(arguments)};
+        l=d.createElement(e); l.async=1; l.src=u;
+        n=d.getElementsByTagName(e)[0]; n.parentNode.insertBefore(l,n);
+      })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+      ml('account', '2263466');
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fcfdfd; }
+        .fade { animation: fadeIn 1.2s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+        .article-body p {
+            color: #475569;
+            font-size: 1.0625rem;
+            line-height: 1.85;
+            margin-bottom: 1.5rem;
+        }
+        .article-body h2 {
+            color: #0f172a;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            padding-left: 1rem;
+            border-left: 3px solid #059669;
+        }
+        .article-body .disclaimer {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 2.5rem;
+            font-style: italic;
+        }
+    </style>
 </head>
 
-<body class="bg-white text-slate-900">
+<body class="text-slate-800 antialiased">
 
-    <!-- Header -->
-    <header class="max-w-3xl mx-auto px-4 pt-10 pb-6">
-        <a href="/blog/" class="text-sm text-slate-500 hover:text-slate-700">&larr; Volver a la Biblioteca Calm</a>
+    <!-- TOP BAR -->
+    <div class="bg-emerald-50 border-b border-emerald-100 text-center text-xs md:text-sm py-2 px-4">
+        <p>Calma bilingüe para la vida moderna. Nuevos productos y herramientas llegan pronto.</p>
+    </div>
 
-        <h1 class="mt-4 text-4xl font-semibold leading-tight text-slate-900">
-            5 Señales de que Estás Emocionalmente Sobrecargado
-        </h1>
-
-        <p class="mt-3 text-lg text-slate-600">
-            Cómo reconocer cuando tu capacidad emocional está al límite — y qué puedes hacer para suavizar el peso.
-        </p>
-
-        <div class="mt-4 flex items-center gap-4 text-sm text-slate-500">
-            <span class="uppercase tracking-wide">Estrés y Sobrecarga</span>
-            <a href="/blog/emotional-overload/" class="text-slate-600 hover:text-slate-900 underline">
+    <!-- NAV -->
+    <nav class="max-w-6xl mx-auto px-6 py-5 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3">
+            <img src="/BM_MainHeaderLogo.png" alt="BuenMind Logo" class="h-12 md:h-16 w-auto">
+        </a>
+        <div class="flex items-center gap-4">
+            <a href="/blog/" class="text-xs font-semibold text-slate-500 hover:text-emerald-700 transition-colors">← Biblioteca de Calma</a>
+            <a href="/blog/emotional-overload/"
+               class="text-xs md:text-sm font-bold text-emerald-700 bg-white px-4 py-2 rounded-full border border-emerald-100 hover:shadow-md transition-all">
                 Read in English
             </a>
         </div>
+    </nav>
+
+    <!-- ARTICLE HEADER -->
+    <header class="max-w-3xl mx-auto px-6 pt-8 pb-6 fade">
+        <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-emerald-600 mb-3">Estrés y Sobrecarga</p>
+
+        <h1 class="text-3xl md:text-4xl font-bold leading-tight text-slate-900 mb-4">
+            5 Señales de que Estás Emocionalmente Sobrecargado
+        </h1>
+
+        <p class="text-lg text-slate-500 leading-relaxed">
+            Cómo reconocer cuando tu capacidad emocional está al límite — y qué puedes hacer para suavizar el peso.
+        </p>
     </header>
 
-    <!-- Hero Image -->
-    <div class="max-w-4xl mx-auto px-4 mb-10">
+    <!-- HERO IMAGE -->
+    <div class="max-w-4xl mx-auto px-6 mb-10 fade">
         <img
             src="/assets/images/blog/emotional-overload-hero.png"
             alt="Orilla tranquila al amanecer con cielo pastel suave y olas calmadas."
-            class="w-full h-auto rounded-2xl shadow-sm"
+            class="w-full h-auto rounded-[2rem] shadow-sm border border-slate-100"
         >
     </div>
 
-    <!-- Article Body -->
-    <main class="max-w-3xl mx-auto px-4 pb-20 prose prose-slate prose-lg">
+    <!-- ARTICLE BODY -->
+    <main class="max-w-3xl mx-auto px-6 pb-12 fade">
+        <div class="article-body">
 
-        <p>
-            Hay días en los que no eres “exagerado” ni “demasiado sensible”; simplemente estás cargando más de lo que tu sistema nervioso puede procesar.
-            La sobrecarga emocional aparece cuando tu mente y tu cuerpo intentan manejar demasiadas demandas, emociones y preocupaciones al mismo tiempo.
-            No es un defecto de carácter; es un tema de capacidad.
-        </p>
+            <p>
+                Hay días en los que no eres "exagerado" ni "demasiado sensible" — simplemente estás cargando más de lo que tu sistema nervioso puede procesar.
+                La sobrecarga emocional aparece cuando tu mente y tu cuerpo intentan manejar demasiadas demandas, emociones y preocupaciones al mismo tiempo.
+                No es un defecto de carácter; es un tema de capacidad.
+            </p>
 
-        <p>
-            Aquí tienes cinco señales suaves que pueden ayudarte a notar cuando estás llegando a tu límite.
-            Reconocerlas es el primer paso para aliviar el peso.
-        </p>
+            <p>
+                Aquí tienes cinco señales suaves que pueden ayudarte a notar cuando estás llegando a tu límite.
+                Reconocerlas es el primer paso para aliviar el peso.
+            </p>
 
-        <h2>1. Tus reacciones se sienten “demasiado fuertes”</h2>
-        <p>
-            Estallas por cosas pequeñas, lloras con facilidad o sientes mucha rabia por algo mínimo.
-            No es que seas “demasiado”; es que tu sistema ya está lleno.
-        </p>
+            <h2>1. Tus reacciones se sienten "demasiado fuertes"</h2>
+            <p>
+                Estallas por cosas pequeñas, lloras con facilidad o sientes mucha rabia por algo mínimo.
+                No es que seas "demasiado" — es que tu sistema ya está lleno.
+            </p>
 
-        <h2>2. Tu mente se siente nublada o dispersa</h2>
-        <p>
-            Lees lo mismo varias veces, olvidas lo que ibas a hacer o te cuesta tomar decisiones simples.
-            Cuando la carga emocional es alta, la concentración y la memoria suelen resentirse.
-        </p>
+            <h2>2. Tu mente se siente nublada o dispersa</h2>
+            <p>
+                Lees lo mismo varias veces, olvidas lo que ibas a hacer o te cuesta tomar decisiones simples.
+                Cuando la carga emocional es alta, la concentración y la memoria suelen resentirse.
+            </p>
 
-        <h2>3. Tu cuerpo está tenso, cansado o ambas cosas</h2>
-        <p>
-            Hombros rígidos, mandíbula apretada, dolores de cabeza, malestar estomacal o cansancio incluso después de dormir
-            pueden ser señales de que tu cuerpo está cargando estrés en silencio.
-        </p>
+            <h2>3. Tu cuerpo está tenso, cansado o ambas cosas</h2>
+            <p>
+                Hombros rígidos, mandíbula apretada, dolores de cabeza, malestar estomacal o cansancio incluso después de dormir
+                pueden ser señales de que tu cuerpo está cargando estrés en silencio.
+            </p>
 
-        <h2>4. Empiezas a evitar personas o responsabilidades</h2>
-        <p>
-            Dejas mensajes sin responder, los correos se acumulan y hasta los planes agradables se sienten como “demasiado”.
-            La sobrecarga emocional hace que la vida cotidiana pese más.
-        </p>
+            <h2>4. Empiezas a evitar personas o responsabilidades</h2>
+            <p>
+                Dejas mensajes sin responder, los correos se acumulan y hasta los planes agradables se sienten como "demasiado."
+                La sobrecarga emocional hace que la vida cotidiana pese más.
+            </p>
 
-        <h2>5. Te sientes apagado, desconectado o en “piloto automático”</h2>
-        <p>
-            En lugar de sentir todo con intensidad, a veces la sobrecarga se muestra como no sentir casi nada.
-            Haces las cosas, pero no te sientes realmente presente.
-        </p>
+            <h2>5. Te sientes apagado, desconectado o en "piloto automático"</h2>
+            <p>
+                En lugar de sentir todo con intensidad, a veces la sobrecarga se muestra como no sentir casi nada.
+                Haces las cosas, pero no te sientes realmente presente.
+            </p>
 
-        <h2>Qué hacer cuando notas estas señales</h2>
-        <p>
-            La sobrecarga emocional no significa que estés fallando; significa que has estado cargando demasiado por mucho tiempo.
-            Empieza con algo pequeño: una respiración lenta, un vaso de agua, un honesto “hoy estoy al límite”.
-            Si estas señales son intensas o persistentes, hablar con un profesional de salud mental o con alguien de confianza
-            puede ser un paso importante.
-        </p>
+            <h2>Qué hacer cuando notas estas señales</h2>
+            <p>
+                La sobrecarga emocional no significa que estés fallando; significa que has estado cargando demasiado por mucho tiempo.
+                Empieza con algo pequeño: una respiración lenta, un vaso de agua, un honesto "hoy estoy al límite."
+                Si estas señales son intensas o persistentes, hablar con un profesional de salud mental o con alguien de confianza
+                puede ser un paso importante.
+            </p>
 
-        <p class="text-sm text-slate-500">
-            Este artículo es solo para información general y no sustituye la atención profesional de salud mental.
-        </p>
+            <p class="disclaimer">
+                Este artículo es solo para información general y no sustituye la atención profesional de salud mental.
+            </p>
 
-        <!-- Downloads -->
-        <div class="mt-12 flex flex-wrap gap-4">
-            <a href="/assets/pdfs/Art1_Emocionalmente_Sobrecargado _ BuenMind.pdf"
-               class="inline-flex items-center justify-center px-5 py-3 rounded-full bg-slate-900 text-white text-sm font-medium hover:bg-slate-800">
-                Descargar el Artículo en PDF
-            </a>
         </div>
 
+        <!-- DOWNLOAD BUTTON -->
+        <div class="mt-10 flex flex-wrap gap-4">
+            <a href="/assets/pdfs/Art1_Emocionalmente_Sobrecargado _ BuenMind.pdf"
+               class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-emerald-700 text-white text-sm font-semibold hover:bg-emerald-800 transition-colors shadow-sm">
+                ↓ Descargar el Artículo en PDF
+            </a>
+            <a href="/blog/emotional-overload/"
+               class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white border border-emerald-100 text-emerald-800 text-sm font-semibold hover:shadow-md transition-all">
+                Read in English →
+            </a>
+        </div>
     </main>
+
+    <!-- MAILERLITE FORM SECTION -->
+    <section class="bg-emerald-50 border-t border-emerald-100 mt-8 py-16 flex justify-center">
+        <div class="w-full max-w-md px-4">
+
+            <div class="text-center mb-6">
+                <p class="text-xs font-semibold tracking-[0.18em] text-emerald-700 uppercase mb-3">Únete al Círculo de Calma</p>
+                <p class="text-sm text-slate-500">
+                    Obtén acceso anticipado a nuevos artículos, herramientas y recursos bilingües — directo a tu bandeja de entrada.
+                </p>
+            </div>
+
+            <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1776073");</style>
+            <style type="text/css">
+            .ml-form-embedSubmitLoad { display: inline-block; width: 20px; height: 20px; }
+            .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+            .ml-form-embedSubmitLoad:after { content: " "; display: block; width: 11px; height: 11px; margin: 1px; border-radius: 50%; border: 4px solid #fff; border-color: #ffffff #ffffff #ffffff transparent; animation: ml-form-embedSubmitLoad 1.2s linear infinite; }
+            @keyframes ml-form-embedSubmitLoad { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+            #mlb2-39867973.ml-form-embedContainer { box-sizing: border-box; display: table; margin: 0 auto; position: static; width: 100% !important; }
+            #mlb2-39867973.ml-form-embedContainer h4, #mlb2-39867973.ml-form-embedContainer p, #mlb2-39867973.ml-form-embedContainer span, #mlb2-39867973.ml-form-embedContainer button { text-transform: none !important; letter-spacing: normal !important; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper { background-color: #ffffff; border-width: 0px; border-color: transparent; border-radius: 10px; border-style: solid; box-sizing: border-box; display: inline-block !important; margin: 0; padding: 0; position: relative; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 400px; width: 100%; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-align-center { text-align: center; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody, #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody { padding: 20px 20px 0 20px; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent, #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent { text-align: left; margin: 0 0 20px 0; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4, #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 { color: #111827; font-family: 'Inter', sans-serif; font-size: 32px; font-weight: 700; margin: 0 0 10px 0; text-align: center; word-break: break-word; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p, #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p { color: #374151; font-family: 'Inter', sans-serif; font-size: 16px; font-weight: 400; line-height: 22px; margin: 0 0 10px 0; text-align: center; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group { text-align: left!important; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form { margin: 0; width: 100%; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent { margin: 0 0 20px 0; width: 100%; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow { margin: 0 0 10px 0; width: 100%; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-last-item { margin: 0; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input { background-color: #ffffff !important; color: #111827 !important; border-color: #d1d5db; border-radius: 10px !important; border-style: solid !important; border-width: 1px !important; font-family: 'Inter', sans-serif; font-size: 16px !important; height: auto; line-height: 21px !important; margin: 0; padding: 10px 10px !important; width: 100% !important; box-sizing: border-box !important; max-width: 100% !important; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-webkit-input-placeholder { color: #111827; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit { margin: 0 0 20px 0; float: left; width: 100%; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button { background-color: #2a7f7f !important; border: none !important; border-radius: 10px !important; box-shadow: none !important; color: #ffffff !important; cursor: pointer; font-family: 'Inter', sans-serif !important; font-size: 16px !important; font-weight: 700 !important; line-height: 21px !important; height: auto; padding: 10px !important; width: 100% !important; box-sizing: border-box !important; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.loading { display: none; }
+            #mlb2-39867973.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover { background-color: #256f6f !important; }
+            .ml-error input { border-color: red!important; }
+            @media only screen and (max-width: 400px){ .ml-form-embedWrapper.embedDefault, .ml-form-embedWrapper.embedPopup { width: 100%!important; } }
+            </style>
+
+            <div id="mlb2-39867973" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-39867973">
+              <div class="ml-form-align-center">
+                <div class="ml-form-embedWrapper embedForm">
+                  <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+                    <div class="ml-form-embedContent">
+                      <h4>Únete al Círculo de Calma</h4>
+                      <p>Recibe tu Reset de Calma de 7 Días gratis.</p>
+                    </div>
+                    <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2263466/forms/184687826975065106/subscribe" data-code="" method="post" target="_blank">
+                      <div class="ml-form-formContent">
+                        <div class="ml-form-fieldRow ml-last-item">
+                          <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                            <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Correo electrónico" autocomplete="email">
+                          </div>
+                        </div>
+                      </div>
+                      <input type="hidden" name="ml-submit" value="1">
+                      <div class="ml-form-embedSubmit">
+                        <button type="submit" class="primary">Comenzar mi Reset</button>
+                        <button disabled="disabled" style="display:none;" type="button" class="loading">
+                          <div class="ml-form-embedSubmitLoad"></div>
+                          <span class="sr-only">Cargando...</span>
+                        </button>
+                      </div>
+                      <input type="hidden" name="anticsrf" value="true">
+                    </form>
+                  </div>
+                  <div class="ml-form-successBody row-success" style="display:none">
+                    <div class="ml-form-successContent">
+                      <h4>You're in. Bienvenido al Círculo de Calma.</h4>
+                      <p>Tu reset de 7 días llegará en un momento.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <script>
+              function ml_webform_success_39867973() {
+                var $ = ml_jQuery || jQuery;
+                $('.ml-subscribe-form-39867973 .row-success').show();
+                $('.ml-subscribe-form-39867973 .row-form').hide();
+              }
+            </script>
+            <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v95037e5bac78f29ed026832ca21a7c7b" type="text/javascript"></script>
+            <script>fetch("https://assets.mailerlite.com/jsonp/2263466/forms/184687826975065106/takel")</script>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-100 py-6 mt-4">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-slate-400">
+            <p>© <span id="year"></span> BuenMind. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="/privacy" class="hover:text-emerald-700">Privacy</a>
+                <a href="/terms" class="hover:text-emerald-700">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
 </body>
 </html>
